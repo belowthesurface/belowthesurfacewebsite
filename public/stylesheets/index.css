@@ -1,0 +1,49 @@
+.navbar {
+  border-radius: 0;
+}
+.video_container_row1 {
+  background-color: #FFFFFF;
+  height: 100vh;
+  margin-top: -90px;
+  z-index: -1;
+  padding-top: 90px;
+}
+.test {
+  color: blue;
+}
+.why_text {
+  color: #FFFFFF;
+  font-size: 40px;
+  font-weight: 100;
+}
+.signup_text {
+  color: #FFFFFF;
+  font-size: 35px;
+  font-weight: 100;
+  text-align: center;
+}
+.join_text {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 100;
+  text-align: center;
+}
+
+.email_container_row2 {
+  background-color: #297EA9;
+  height: 100vh;
+}
+
+.solution_container_box1 {
+  background-color: #1184B7;
+  height: 100vh;
+}
+.solution_container_box2 {
+  background-color: #FFCA0A;
+  height: 100vh;
+}
+
+.about_container_row4 {
+  background-color: #FFFFFF;
+  height: 100vh;
+}
