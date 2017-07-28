@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var contactSchema = new mongoose.Schema({
+var emailListSchema = new mongoose.Schema({
   name: {
     type: String,
     require: true
@@ -8,21 +8,13 @@ var contactSchema = new mongoose.Schema({
   email: {
     type: String,
     require: true
-  },
-  interested: {
-    type: String,
-    require: true
-  },
-  content: {
-    type: String,
-    require: true
-  },
+  }
 }, {
   timestamps: true
 })
 
-var Contact = mongoose.model("Contact", contactSchema)
+var emailList = mongoose.model("emailList", emailListSchema)
 
 module.exports = {
-  Contact: Contact
+  EmailList: emailList
 };
