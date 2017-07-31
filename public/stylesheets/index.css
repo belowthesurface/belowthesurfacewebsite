@@ -45,5 +45,67 @@
 
 .about_container_row4 {
   background-color: #FFFFFF;
-  height: 100vh;
+  height: 150vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.about_container {
+  background-color: #FFFFFF;
+  height: 50vh;
+  width: 70vw;
+}
+.water_droplet {
+  /*margin: 0 auto;*/
+  width: 150px;
+  height: 150px;
+  border-radius: 75% 0 55% 45% / 55% 0 75% 45%;
+  border: 3px solid transparent;
+  transform: rotate(-45deg);
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  padding-top: 15px;
+  padding-right: 15px;
+  background-color: #37A9E3;
+
+}
+.profile_pic {
+  width: 120px;
+  height: 120px;
+  transform: rotate(45deg);
+  border-radius: 60px;
+  margin: 0 auto;
+}
+.team_title {
+  color: #535353;
+  font-weight: 300;
+  font-size: 30px;
+  letter-spacing: .412rem;
+  margin-top: -50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.name {
+  transform: rotate(0deg);
+  color: #000000;
+  font-weight: 500;
+  font-size: 24px;
+  /*text-align: center;*/
+}
+.title {
+    color: #535353;
+    font-size: 16px;
+    font-weight: 300;
+
+}
+.about_icon_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
