@@ -1,43 +1,40 @@
-var express = require("express");
-var app = express();
+var express = require("express"),
+  bodyParser = require('body-parser');
+
 var compression = require('compression');
 var helmet = require('helmet')
-var router = express.Router();
+var routes = require('./routes/index');
 var path = __dirname + '/views/';
+var flash = require('connect-flash');
 
+var app = express();
 app.use(express.static(__dirname + '/public'));
 app.use(compression());
 app.use(helmet());
+app.use(flash());
 
 var mongoose = require('mongoose');
 var connect = process.env.MONGODB_URI;
 mongoose.connect(connect);
 
-
-router.use(function(req, res, next) {
-  console.log("/" + req.method);
-  next();
+var hbs = require('express-handlebars')({
+  defaultLayout: 'layout',
+  extname: '.hbs'
 });
 
-router.get("/", function(req, res) {
-  res.sendFile(path + "index.html");
-});
+app.engine('hbs', hbs);
+app.set('view engine', 'hbs');
 
-// router.get("/about",function(req,res){
-//   res.sendFile(path + "about.html");
-// });
-//
-// router.get("/contact",function(req,res){
-//   res.sendFile(path + "contact.html");
-// });
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
-app.use("/", router);
+app.use('/', routes);
 
-app.use("*", function(req, res) {
-  res.sendFile(path + "404.html");
-});
 
 app.listen(process.env.PORT || 3000, function() {
   console.log('listening on *:3000');
 });
+
 
