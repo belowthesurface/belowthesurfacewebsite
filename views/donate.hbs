@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Below The Surface Donation</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/donate.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+</head>
+
+<style type="text/css">
+	.donateformcontainer{
+		padding-top: 20px;
+	    max-width: 390px;
+	    position: relative;
+	    padding-left: 0;
+	    padding-right: 0;
+	    margin-left: auto;
+	    margin-right: auto;
+	    text-align: center;
+	}
+	.donateform{
+		border: 1px solid #dfdfd7;
+	    border-top-left-radius: 4px;
+	    border-top-right-radius: 4px;
+	    border-bottom-left-radius: 4px;
+	    border-bottom-right-radius: 4px;
+	    background: #fff;
+	    position: relative;
+	    margin: 0;
+	    max-width: 100%;
+	}
+	.form-header{
+		background: #f4f5f0;
+	    border-bottom: 1px solid #dfdfd7;
+	    border-top-left-radius: 3px;
+	    border-top-right-radius: 3px;
+	    color: #333232;
+	    display: block;
+	    font-size: 16px;
+	    font-weight: 500;
+	    margin-bottom: 10px;
+	    padding: 20px;
+	}
+
+	.btn{
+ 		background-color: #FFCA0A;
+	    color: white;
+	    height: 64px;
+	    line-height: 64px;
+	    font-size: 20px;
+	    padding: 0 40px;
+	    text-transform: uppercase;
+	    letter-spacing: .3em;
+	    font-weight: 700;
+	    width: 100%;
+	}
+	.donate-form-body {
+	    padding: 10px 20px 20px;
+	}
+	.amount-wrapper {
+	    width: 100%;
+	}
+	.input-wrapper{
+		margin-bottom: 16px;
+   		position: relative;
+	}
+	.input-field-container {
+	    position: relative;
+	}
+	.postfix, .postinput, .prefix, .preinput {
+	    font-weight: 500;
+	    font-size: .8rem;
+	    line-height: 1rem;
+	    color: #c1c1ba;
+	    padding: 0 10px;
+	}
+	.postinput, .preinput {
+	    color: #333232;
+	    font-size: 18px;
+	}
+	.postinput {
+	    right: 0;
+	}
+	.amount-wrapper input {
+ 	   border-radius: 4px;
+ 	   border: solid 1px #c1c1ba;
+	}
+	.postinput, .preinput {
+	    position: absolute;
+	    top: 50%;
+	    z-index: 1;
+	    -webkit-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	    transform: translateY(-50%);
+	}
+	input[type=number]{
+	    font-size: 16px;
+	    line-height: 1.3;
+	    padding: 15px 10px;
+	    border-radius: 4px;
+	    border: solid 1px #c1c1ba;
+	    margin-bottom: 0;
+	    height: auto;
+	    text-align: left;
+	    color: #333232;
+	    width: 100%;
+	    cursor: pointer;
+	    vertical-align: bottom;
+	    -webkit-appearance: none;
+	}
+	.postinput ~ input, .preinput ~ input {
+	    padding-left: 30px;
+	}
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+	    /* display: none; <- Crashes Chrome on hover */
+	    -webkit-appearance: none;
+	    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+	}
+	.donate-amount	input{
+	    height: 60px;
+	    font-size: 24px;
+	    color: #369ff4;
+	}
+
+	.creditcard{
+		display: none;
+	}
+
+	.paypal{
+		display: none;
+		background-color: white
+	}
+
+</style>
+<script type="text/javascript">
+	
+	function donate_onClick() {
+		$('#donatebutton').css("display","none");
+		$('.creditcard').css("display","block");
+		$('.paypal').css("display","block");
+		var value = $("#donateamount").val()
+		$("#word").text("Donating $"+value)
+
+	   		
+	}
+
+	function backtodonate(){
+		$('#donatebutton').css("display","block");
+		$('.creditcard').css("display","none");
+		$('.paypal').css("display","none");
+		$("#word").text("Enter an amount to give")
+	}
+
+</script>
+
+<body>
+
+<div class='donateformcontainer'>
+	<form action='' autocomplete="off" class="donateform">
+		<span class="form-header text-center">
+			<span id='word'>Enter an amount to give</span>
+		</span>
+		<div class='donate-form-body'>
+			<div class="amount-wrapper">
+				<div class="input-wrapper donate-amount">
+					<div class="input-field-container">
+
+						<span class="preinput">$</span>
+
+						<input id="donateamount" type="number" step="0.01" data-amount="true" data-parsley-currency="1,50000" data-parsley-error-message="Please enter a valid amount ($1.00 minimum)" data-parsley-errors-container=".donate-amount.a5826748-d59d-4f86-a042-1e4c030720d5 .error" name="donation_form[amount]" required="" value="">
+						<span class="postinput">USD</span>
+					</div>
+				</div>
+
+				<a id="donatebutton" class="btn" onClick="a_onClick()">Donate</a>
+
+				<button class="btn creditcard" onclick="creditcare()">
+					<span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>
+					Donate via Credit Card
+				</button>
+				<button class="btn paypal" onclick="creditcare()">
+					<span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>
+				</button>
+			
+			</div>
+		</div>
+	</form>
+</div>
+
+	<div id="intro">
+	  <h3>Donate via Credit Card</h3>
+	  <hr/>  
+	  <h3>Donate via Paypal</h3>	
+
+
+	  <script>
+        paypal.Button.render({
+
+            env: 'sandbox', // sandbox | production
+
+            // PayPal Client IDs - replace with your own
+            // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+            client: {
+                sandbox:    'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R',
+                production: '<insert production client id>'
+            },
+
+            // Show the buyer a 'Pay Now' button in the checkout flow
+            commit: true,
+
+            // payment() is called when the button is clicked
+            payment: function(data, actions) {
+
+                // Make a call to the REST api to create the payment
+                return actions.payment.create({
+                    payment: {
+                        transactions: [
+                            {
+                                amount: { total: '0.01', currency: 'USD' }
+                            }
+                        ]
+                    }
+                });
+            },
+
+            // onAuthorize() is called when the buyer approves the payment
+            onAuthorize: function(data, actions) {
+
+                // Make a call to the REST api to execute the payment
+                return actions.payment.execute().then(function() {
+                    window.alert('Payment Complete!');
+                });
+            }
+
+        }, '#paypal-button-container');
+    </script>
+
+</body> 
+
+
+
+</html>
