@@ -38,39 +38,55 @@
 
 </div>
 <br/>
-
-<div id="videoContainer">
-
-    <div class="videoCover"></div>
-    <video id="coverVid" autoplay="" class="vsc-initialized" >
-      <source src="../video/Main.webm" type="video/webm">
-      There was a problem loading video on your browser.
-    </video>
-  </div>
-
-
-  <div class="container-fluid">
-    
-    <section id="intro">
-      <div class="container">
-        <!-- <div class="title"><h1>JUMPCUT</h1></div>
-        <div class="title"><h3>Captivating Online Courses</h3></div> -->
-      </div>
-    </section>
-    
-    <div class="row">
-      <div class="col-md-12 email_container_row2">
-        <div class="col-md-12 text-center">
-          <div class="emailtitle"><h1>Who Are We?</h1></div>
-          <div class='emailunderline'>⚊</div>
-        </div>
-        <div class="col-md-12 text-center">
-          <p class="emailparagraph">To impact a community, you must first understand its people” Below the Surface increases the amount of safe drinking water throughout Ethiopia by empowering its leaders to improve education and enhance gender equality.</p>
-        </div>
-      </div>
-
-      <h4 class="join_text">Join our community to make a difference</h4>
+<section id="video">
+<div class="container-fluid">
+  <div class="embed-responsive embed-responsive-16by9 hidden-xs">
+    <div id="intro">
+          <video id="coverVid" autoplay="" class="vsc-initialized" >
+            <source src="../video/Main.webm" type="video/webm">
+            There was a problem loading video on your browser.
+          </video>
     </div>
+  </div>
+</section>
+
+ <div class="container-fluid" id="page">
+     <div class="post-author">
+        <img alt="" src="/assets/profile.jpg" class="avatar avatar-52 photo">
+        </div>
+      
+      <section id="whoWeAre" name="whoWeAre" class="text-center">
+        <div class="row">
+          <div id= "Horizontal" class="emailtitle"><h1>Who Are We?</h1></div>    
+          <div class='emailunderline'>⚊</div>
+
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <p class='emailparagraph'>To impact a community, you must first understand its people” Below the Surface increases the amount of safe drinking water throughout Ethiopia by empowering its leaders to improve education and enhance gender equality.</p>
+          </div>
+
+          <div class="text-vertical-center-form">
+            {{#if checkformessage}}
+                
+                    <h1 style="color: white;"> Thank you for helping us. There are {{emailcount}} people waiting for our app.</h1>
+              
+               {{else}}
+                 <form method="POST" action="/email">  
+                    <div class="group"> 
+                        
+                      <input type="email" name="email" class="formStyle" placeholder="Email (required)" required />
+                      </div>
+                      <div class="col-md-offset-3 col-md-6 "> 
+                      <button class="btn btn-default btn-round" type="submit">Join the community</button>
+                      </div>
+               
+                <form>
+              {{/if}}
+
+        </div>
+      </section>
+     </div>
+   
+
 
 
     <div class="row row3">
@@ -110,58 +126,60 @@
       <div class="about_container">
         <h1 class="team_title">MEET THE TEAM</h1>
       <div class="col-md-3 col-sm-4 col-xs-6 about_icon_container ">
-        <div class="water_droplet">
-          <img src="../images/JetuwrDavis.png" alt="Name" class="profile_pic">
-        </div>
+        
+          <img src="../images/JetuwrDavisFinish.png" alt="Name" class="profile_pic">
+        
         <h1 class="name">Jetuwr</h1>
         <h1 class="title">Founder</h1>
       </div>
       <div class="col-md-3 col-sm-4 col-xs-6 about_icon_container">
-        <div class="water_droplet">
-          <img src="../images/AbeleMeshesha.png" alt="Name" class="profile_pic">
-      </div>
+        
+          <img src="../images/AbeleMesheshaFinish.png" alt="Name" class="profile_pic">
+      
         <h1 class="name">Abele</h1>
         <h1 class="title">Fundraising Chair</h1>
       </div>
       <div class="col-md-3 col-sm-4 col-xs-6 about_icon_container">
-        <div class="water_droplet">
-          <img src="../images/FairuzAli.png" alt="Name" class="profile_pic">
-      </div>
+  
+          <img src="../images/FairuzAliFinish.png" alt="Name" class="profile_pic">
+     
         <h1 class="name">Fairuz</h1>
         <h1 class="title">Event Planning Co-Chair</h1>
       </div>
       <div class="col-md-3 col-sm-4 col-xs-6 about_icon_container">
-        <div class="water_droplet">
-          <img src="../images/MarwaGhumrawi.png" alt="Name" class="profile_pic">
-      </div>
+      
+          <img src="../images/MarwaGhumrawiFinish.png" alt="Name" class="profile_pic">
+    
         <h1 class="name">Marwa</h1>
         <h1 class="title">Social Media Chair</h1>
       </div>
+
       <div class="col-md-3 col-sm-4 col-xs-6 about_icon_container">
-        <div class="water_droplet">
-          <img src="../images/Ekram.png" alt="Name" class="profile_pic">
-      </div>
+        
+          <img src="../images/EkramFinish.png" alt="Name" class="profile_pic">
+      
         <h1 class="name">Ekram</h1>
         <h1 class="title">Event Planning Co-chair</h1>
-      </div>
+     </div>
+
       <div class="col-md-3 col-sm-4 col-xs-6 about_icon_container">
-        <div class="water_droplet">
-          <img src="../images/Bemnet.png" alt="Name" class="profile_pic">
-      </div>
+        
+          <img src="../images/BemnetFinish.png" alt="Name" class="profile_pic">
+      
         <h1 class="name">Bemnet</h1>
         <h1 class="title">Treasurer</h1>
       </div>
+
       <div class="col-md-3 col-sm-4 col-xs-6 about_icon_container">
-        <div class="water_droplet">
-          <img src="../images/Farida.png" alt="Name" class="profile_pic">
-      </div>
+        
+          <img src="../images/FaridaFinish.png" alt="Name" class="profile_pic">
+      
         <h1 class="name">Farida</h1>
         <h1 class="title">Secretary</h1>
       </div>
       <div class="col-md-3 col-sm-4 col-xs-6 about_icon_container">
-        <div class="water_droplet">
+        
           <!-- <img src="../images/test.png" alt="Name" class="profile_pic"> -->
-      </div>
         <h1 class="name">Arjo</h1>
         <h1 class="title">Community Partnership Liasion/Translator</h1>
       </div>

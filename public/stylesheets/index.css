@@ -80,11 +80,11 @@ ul {
 
 
 
-.email_container_row2 {
+#whoWeAre {
   background-color: rgba(41,126,169,0.5);
   background-image: url('../images/whybackground.jpg');
   background-size: cover;
-  height: 35vh;
+  margin-top: -20;padding: 30;
 }
 .emailtitle{
     margin-top: 10px;
@@ -101,6 +101,53 @@ ul {
    color: white;
     padding: 10px 100px;
 }
+
+.formStyle { 
+  background-color: transparent;
+  padding: 20px; 
+  width: 400px; 
+  margin-bottom: 20px; 
+  border-bottom-width: 3px; 
+  border-bottom-style: solid; 
+  border-bottom-color: #ecf0f1; 
+  border-top-style: none; 
+  border-right-style: none; 
+  border-left-style: none; 
+  font-size: 1em;
+  font-weight: 100;
+  color: #ffffff;
+}
+input:focus {
+  outline: none;
+}
+/* To format the placeholder text color */
+::-webkit-input-placeholder {
+   color: #ecf0f1;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #ecf0f1;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #ecf0f1;  
+}
+
+:-ms-input-placeholder {  
+   color: #ecf0f1;  
+}
+
+.text-vertical-center-form {
+    
+}
+
+.text-vertical-center-form h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 4.5em;
+    font-weight: 700;
+}
+
 
 
 .row3 {
@@ -207,10 +254,8 @@ ul {
 
 }
 .profile_pic {
-  width: 120px;
-  height: 120px;
-  transform: rotate(45deg);
-  border-radius: 60px;
+  width: 200px;
+  height: 200px;
   margin: 0 auto;
 }
 .team_title {
@@ -231,8 +276,9 @@ ul {
 }
 .title {
     color: #535353;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: 300;
+    margin-top: -5;
 
 }
 .about_icon_container {
@@ -240,7 +286,7 @@ ul {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 50%;
+  height: 40%;
   /*margin-bottom: 20px;*/
 }
 .row5 {
@@ -348,12 +394,18 @@ ul {
   /*opacity: 0.8;*/
 }
 
-#intro {
-    position: relative;
-    background-color: transparent;
-    color: #222;
-    background-size: cover;
-    height: 100vh;
+#video .container-fluid{
+margin: auto;
+width: 100%;
+overflow: hidden;
+max-height: 800px;
+padding: 0;
+position: relative;
+top: -20;
+}
+
+.embed-responsive{
+  min-height: 240px;
 }
 
 #intro,
@@ -426,66 +478,60 @@ body {
 
 }
 
-#intro {
-    position: relative;
-    background-color: transparent;
-    color: #222;
-    background-size: cover;
-    height: 100vh;
-}
-#coverVid {
-    /*right: 0;*/
-    /*min-width: 100%;*/
-    /*min-height: 100%;*/
-    width: 100%;
-    /*height: 100vh;*/
-    z-index: -1000;
-    background-color: black;
+#video .container-fluid{
+margin: auto;
+width: 100%;
+overflow: hidden;
+max-height: 800px;
+padding: 0;
+position: relative;
+top: -20px;
 }
 
-#videoContainer {
-    height: 800px;
-    left: 0;
-    width: 100%
-}
-
-#videoContainer .videoCover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: white;
-    opacity: .01;
+.embed-responsive{
+  min-height: 240px;
 }
 
 
-
-@media (max-width:768px) {
-    #intro,
-    #videoContainer {
-        max-height: 550px
-    }
-    #intro h3,
-    #whoWeAre .link {
-        margin-top: 0
-    }
-    #intro {
-        padding: 0 1rem
-    }
-    #intro .container {
-        padding-top: 220px
-    }
-    #intro h1 {
-        font-size: 3rem;
-        letter-spacing: .5rem;
-        margin-bottom: 5px
-    }
-    #intro h3 {
-        font-size: 1.063rem;
-        letter-spacing: .45rem;
-        line-height: 1.8rem
-    }
-
+/* IntroVideo */
+@media (max-width: 1220px) {
+      #intro h1{
+        font-size: 60px;
+      }
+      #intro .typed-cursor{
+        font-size: 65px;
+      }
+      #intro{
+        height: 450px;
+      }
 }
+@media (max-width: 900px) {
+      #intro h1{
+        font-size: 30px;
+      }
+      #intro .typed-cursor{
+        font-size: 30px;
+      }
+      #intro{
+        height: 450px;
+      }
+}
+@media (max-width: 575px) {
+      #intro h1{
+        font-size: 22px;
+      }
+      #intro h3{
+        font-size: 20px;
+      }
+      #intro .typed-cursor{
+        font-size: 22px;
+      }
+      #intro{
+        height: 450px;
+      }
+}
+
+
 .donate{
   position: fixed;
   top: 15px;
