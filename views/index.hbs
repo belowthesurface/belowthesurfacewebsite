@@ -10,7 +10,6 @@
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-
     <link rel="stylesheet" type="text/css" href="stylesheets/index.css" />
 
     <link rel="stylesheet" type="text/css" href="stylesheets/nav.css" />
@@ -20,13 +19,19 @@
 <div>
 <div>
 
+<header>
+  <div class="donate">
+    <button type="button" class="btn btn-default btn-round">Donate</button>
+  </div>
+</header>
+
   <aside id="sticky-social">
       <ul>
-          <li><a href="https://www.facebook.com" class="entypo-facebook" target="_blank"><span>Facebook</span></a></li>
-          <li><a href="https://www.twitter.com" class="entypo-twitter" target="_blank"><span>Twitter</span></a></li>
-          <li><a href="https://www.linkedin.com" class="entypo-linkedin" target="_blank"><span>LinkedIn</span></a></li>
-          <li><a href="https://www.instagram.com" class="entypo-instagrem" target="_blank"><span>Instagram</span></a></li>
-          <li><a href="https://www.medium.com" class="entypo-medium" target="_blank"><span>Medium</span></a></li>
+          <li><a href="https://www.facebook.com" class="fa fa-facebook" target="_blank"><span>Facebook</span></a></li>
+          <li><a href="https://www.twitter.com" class="fa fa-twitter" target="_blank"><span>Twitter</span></a></li>
+          <li><a href="https://www.linkedin.com" class="fa fa-linkedin" target="_blank"><span>LinkedIn</span></a></li>
+          <li><a href="https://www.instagram.com" class="fa fa-instagram" target="_blank"><span>Instagram</span></a></li>
+          <li><a href="https://www.medium.com" class="fa fa-medium" target="_blank"><span>Medium</span></a></li>
       </ul>
   </aside>
 
@@ -34,48 +39,40 @@
 </div>
 <br/>
 
+<div id="videoContainer">
+
+    <div class="videoCover"></div>
+    <video id="coverVid" autoplay="" class="vsc-initialized" >
+      <source src="../video/Main.webm" type="video/webm">
+      There was a problem loading video on your browser.
+    </video>
+  </div>
+
 
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12 video_container_row1">
+    
+    <section id="intro">
+      <div class="container">
+        <!-- <div class="title"><h1>JUMPCUT</h1></div>
+        <div class="title"><h3>Captivating Online Courses</h3></div> -->
       </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12 video_container_row1">
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="HDLJWBRU69VVU">
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-        </form>
-      </div>
-    </div>
-
+    </section>
     
     <div class="row">
       <div class="col-md-12 email_container_row2">
-        <div class="col-md-12">
-          <h1 class="why_text">WHY?</h1>
-          <h2 class="signup_text">Sign up for our newsletters</h2>
-          <h4 class="join_text">Join our community to make a difference</h4>
+        <div class="col-md-12 text-center">
+          <div class="emailtitle"><h1>Who Are We?</h1></div>
+          <div class='emailunderline'>⚊</div>
         </div>
-        <div class="col-md-6">
-          <h4 class="join_text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</h4>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-          </div>
+        <div class="col-md-12 text-center">
+          <p class="emailparagraph">To impact a community, you must first understand its people” Below the Surface increases the amount of safe drinking water throughout Ethiopia by empowering its leaders to improve education and enhance gender equality.</p>
         </div>
       </div>
+
+      <h4 class="join_text">Join our community to make a difference</h4>
     </div>
+
+
     <div class="row row3">
       <div class="col-md-12 solution_container_box1">
         <div class="col-md-6 solution_inner_container">
@@ -199,4 +196,17 @@
   </div>
   </div>
 </body>
+
+<script type="text/javascript">
+
+var videoJ= $('#coverVid');        
+
+videoJ.on('ended',function() { 
+   this.currentTime = 2600; 
+}, false);
+
+
+</script>
+
+
 </html>

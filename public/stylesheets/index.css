@@ -1,12 +1,7 @@
 .navbar {
   border-radius: 0;
 }
-@import url(http://weloveiconfonts.com/api/?family=entypo);
 
-/* entypo */
-[class*="entypo-"]:before {
-   font-family: "entypo", sans-serif;
-}
 a {
    text-decoration: none;
 }
@@ -18,65 +13,52 @@ ul {
 .container {
    margin: 0 auto;
    padding: 20px 50px;
-   background: white;
+   background: transparent;
 }
 #sticky-social {
    right: 0;
    position: fixed;
-   top: 150px;
+   top: 50%;
+   transform: translate(0, -50%);
    z-index: 100;
 }
 #sticky-social a {
    background: #333;
    color: #fff;
    display: block;
-   height: 60px;
-   font: 16px "Open Sans", sans-serif;
+   height: 30px;
    line-height: 35px;
    position: relative;
    text-align: center;
-   width: 60px;
+   width: 30px;
 }
 #sticky-social a span {
-   line-height: 60px;
+   line-height: 30px;
    left: 120px;
    position: absolute;
    text-align:center;
    width:120px;
 }
-#sticky-social a:hover span {
-   left: -100%;
-}
+
 #sticky-social a[class*="facebook"],
-#sticky-social a[class*="facebook"]:hover,
 #sticky-social a[class*="facebook"] span { background: #3b5998; }
 
 #sticky-social a[class*="twitter"],
-#sticky-social a[class*="twitter"]:hover,
 #sticky-social a[class*="twitter"] span { background: #00aced; }
 
 #sticky-social a[class*="gplus"],
-#sticky-social a[class*="gplus"]:hover,
 #sticky-social a[class*="gplus"] span { background: #dd4b39; }
 
 #sticky-social a[class*="linkedin"],
-#sticky-social a[class*="linkedin"]:hover,
 #sticky-social a[class*="linkedin"] span { background: #007bb6; }
 
 #sticky-social a[class*="instagrem"],
-#sticky-social a[class*="instagrem"]:hover,
 #sticky-social a[class*="instagrem"] span { background: #517fa4; }
-/*
-#sticky-social a[class*="stumbleupon"],
-#sticky-social a[class*="stumbleupon"]:hover,
-#sticky-social a[class*="stumbleupon"] span { background: #eb4924; }*/
 
 #sticky-social a[class*="pinterest"],
-#sticky-social a[class*="pinterest"]:hover,
 #sticky-social a[class*="pinterest"] span { background: #cc2127; }
 
 #sticky-social a[class*="medium"],
-#sticky-social a[class*="medium"]:hover,
 #sticky-social a[class*="medium"] span { background: #4AAE83; }
 
 /*#sticky-social a[class*="flickr"],
@@ -86,13 +68,7 @@ ul {
 #sticky-social a[class*="tumblr"],
 #sticky-social a[class*="tumblr"]:hover,
 #sticky-social a[class*="tumblr"] span { background: #32506d; }*/
-.video_container_row1 {
-  background-color: #FFFFFF;
-  height: 100vh;
-  margin-top: -90px;
-  z-index: -1;
-  padding-top: 90px;
-}
+
 .test {
   color: blue;
 }
@@ -101,23 +77,32 @@ ul {
   font-size: 40px;
   font-weight: 100;
 }
-.signup_text {
-  color: #FFFFFF;
-  font-size: 35px;
-  font-weight: 100;
-  text-align: center;
-}
-.join_text {
-  color: #FFFFFF;
-  font-size: 18px;
-  font-weight: 100;
-  text-align: center;
-}
+
+
 
 .email_container_row2 {
-  background-color: #297EA9;
-  height: 100vh;
+  background-color: rgba(41,126,169,0.5);
+  background-image: url('../images/whybackground.jpg');
+  background-size: cover;
+  height: 35vh;
 }
+.emailtitle{
+    margin-top: 10px;
+    color: white;
+    text-transform: uppercase;
+
+}
+.emailunderline{
+  margin-top: -20px;
+    color: white;
+    font-size: 30px;
+}
+.emailparagraph{
+   color: white;
+    padding: 10px 100px;
+}
+
+
 .row3 {
   /*background-image: url("../images/solution_background.jpg");*/
   background-color: orange;
@@ -187,11 +172,6 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.btn {
-  z-index: 1;
-  background-color: red;
-  opacity: 1;
 }
 
 .about_container_row4 {
@@ -366,4 +346,168 @@ ul {
   font-size: 20px;
   background-color: #FFFFFF;
   /*opacity: 0.8;*/
+}
+
+#intro {
+    position: relative;
+    background-color: transparent;
+    color: #222;
+    background-size: cover;
+    height: 100vh;
+}
+
+#intro,
+.title h2 {
+    text-align: center
+}
+
+#coverVid,
+#videoContainer {
+    overflow: hidden;
+    top: 0;
+    position: absolute
+}
+
+#careers,
+#sitewideHeader a,
+body {
+    font-family: Hind, sans-serif
+}
+
+#intro h3,
+#sitewideHeader .login-btn,
+#sitewideHeader a,
+.blogPosts .blogItem h4,
+.title h2 {
+    text-transform: uppercase
+}
+
+html {
+    font-size: 100%
+}
+
+body {
+    font-family: Hind, sans-serif
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .004)
+}
+
+.container-fluid {
+    padding: 0
+}
+
+.container {
+    max-width: 970px
+}
+
+
+#intro h1,
+#intro h3,
+#sitewideHeader.nav-on-white .navbar-collapse[aria-expanded=true] .nav.navbar-nav a {
+    color: #fff
+}
+
+#intro .container {
+    padding-top: 322px
+}
+
+#intro h1 {
+    font-size: 6rem;
+    letter-spacing: 1.5rem;
+    font-weight: 600
+}
+
+#intro h3 {
+    font-size: 1.8rem;
+    letter-spacing: .625rem;
+    font-weight: 500
+}
+
+
+}
+
+#intro {
+    position: relative;
+    background-color: transparent;
+    color: #222;
+    background-size: cover;
+    height: 100vh;
+}
+#coverVid {
+    /*right: 0;*/
+    /*min-width: 100%;*/
+    /*min-height: 100%;*/
+    width: 100%;
+    /*height: 100vh;*/
+    z-index: -1000;
+    background-color: black;
+}
+
+#videoContainer {
+    height: 800px;
+    left: 0;
+    width: 100%
+}
+
+#videoContainer .videoCover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: .01;
+}
+
+
+
+@media (max-width:768px) {
+    #intro,
+    #videoContainer {
+        max-height: 550px
+    }
+    #intro h3,
+    #whoWeAre .link {
+        margin-top: 0
+    }
+    #intro {
+        padding: 0 1rem
+    }
+    #intro .container {
+        padding-top: 220px
+    }
+    #intro h1 {
+        font-size: 3rem;
+        letter-spacing: .5rem;
+        margin-bottom: 5px
+    }
+    #intro h3 {
+        font-size: 1.063rem;
+        letter-spacing: .45rem;
+        line-height: 1.8rem
+    }
+
+}
+.donate{
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 999;
+}
+.btn{
+    background-color: transparent;
+    color: white;
+    padding: 7.6px 20px;
+    z-index: 999;
+}
+.btn-round{
+  border-radius: 50px;
+    border-color: #E89815;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2;
+    border-width: 2px;
+}
+.btn-default:hover {
+    color: black;
+    background-color: transparent;
+    border-color: white;
 }
