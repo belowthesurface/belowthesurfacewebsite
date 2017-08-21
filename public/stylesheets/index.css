@@ -522,6 +522,11 @@ top: -20px;
       #intro{
         height: 450px;
       }
+      .emailparagraph{
+        padding: 10px 20px;
+        font-size: 14;
+      }
+
 }
 @media (max-width: 575px) {
       #intro h1{
@@ -535,6 +540,15 @@ top: -20px;
       }
       #intro{
         height: 450px;
+      }
+      .formStyle{
+        width: 300px;
+      }
+      .emailtitle h1{
+        font-size: 30px;
+      }
+      .donate {
+          right: 140;
       }
 }
 
@@ -564,3 +578,4 @@ top: -20px;
     background-color: transparent;
     border-color: white;
 }
+
