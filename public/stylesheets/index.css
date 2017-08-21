@@ -77,6 +77,10 @@ ul {
   z-index: 999;
 }
 
+.mobilemain{
+  display: none;
+}
+
 #whoWeAre {
   background-color: rgba(41,126,169,0.5);
   background-image: url('../images/whybackground.jpg');
@@ -500,6 +504,50 @@ top: -20px;
 }
 
 
+
+.donate{
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 999;
+}
+.btn{
+    background-color: transparent;
+    color: white;
+    padding: 7.6px 20px;
+    z-index: 999;
+}
+.btn-round{
+  border-radius: 50px;
+    border-color: #E89815;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2;
+    border-width: 2px;
+}
+.btn-default:hover {
+    color: black;
+    background-color: transparent;
+    border-color: white;
+}
+
+.donatebutton{
+  width: 115px;
+  height: 50px;
+  background-image: url('../images/ButtonOutline.png');
+  text-align: center;
+  padding: 10px 0px;
+
+}
+
+.donateword{
+   font-size: 14px;
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-weight: 600;
+   font-variant: small-caps;
+   margin-left: -3;
+}
+
 /* IntroVideo */
 @media (max-width: 1220px) {
       #intro h1{
@@ -550,32 +598,15 @@ top: -20px;
       .donate {
           right: 140;
       }
-}
-
-
-.donate{
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  z-index: 999;
-}
-.btn{
-    background-color: transparent;
-    color: white;
-    padding: 7.6px 20px;
-    z-index: 999;
-}
-.btn-round{
-  border-radius: 50px;
-    border-color: #E89815;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 2;
-    border-width: 2px;
-}
-.btn-default:hover {
-    color: black;
-    background-color: transparent;
-    border-color: white;
+      .mobilemain{
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: url('../images/mobilemain.jpg') no-repeat center center; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
 }
 
