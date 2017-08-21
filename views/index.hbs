@@ -28,9 +28,18 @@
       <h4 class='donateword'>Donate Now</h4>
     </div>
   </div>
+
 </header>
 
-
+  <aside id="sticky-social">
+      <ul>
+          <li><a href="https://www.facebook.com" class="fa fa-facebook" target="_blank"><span>Facebook</span></a></li>
+          <li><a href="https://www.twitter.com" class="fa fa-twitter" target="_blank"><span>Twitter</span></a></li>
+          <li><a href="https://www.linkedin.com" class="fa fa-linkedin" target="_blank"><span>LinkedIn</span></a></li>
+          <li><a href="https://www.instagram.com" class="fa fa-instagram" target="_blank"><span>Instagram</span></a></li>
+          <li><a href="https://www.medium.com" class="fa fa-medium" target="_blank"><span>Medium</span></a></li>
+      </ul>
+  </aside>
 
 </div>
 <br/>
@@ -49,7 +58,24 @@
 <section id="mobileversion">
   <div class="container-fluid">
     <div class='mobilemain'>
-      
+          <div class="text-vertical-center-form mobileform text-center">
+            {{#if checkformessage}}
+
+                    <h1 style="color: white; "> Thank you for helping us. There are {{emailcount}} people waiting for our app.</h1>
+
+               {{else}}
+                 <form method="POST" action="/email">
+                    <div class="group">
+
+                      <input type="email" name="email" class="formStyle" placeholder="Email (required)" required />
+                      </div>
+                      <div class="col-md-offset-3 col-md-6 col-xs-12 text-center">
+                      <button class="btn btn-default btn-round" type="submit" style="color: black; position: relative; top: 80px;">Join the community</button>
+                      </div>
+
+                <form>
+              {{/if}}
+            </div>
     </div> 
   </div>
 
@@ -66,7 +92,7 @@
             <p class='emailparagraph'>To impact a community, you must first understand its people” Below the Surface increases the amount of safe drinking water throughout Ethiopia by empowering its leaders to improve education and enhance gender equality.</p>
           </div>
 
-          <div class="text-vertical-center-form">
+          <div class="text-vertical-center-form desktopform">
             {{#if checkformessage}}
 
                     <h1 style="color: white;"> Thank you for helping us. There are {{emailcount}} people waiting for our app.</h1>

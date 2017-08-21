@@ -759,9 +759,6 @@ top: -20;
 
 #careers,
 #sitewideHeader a,
-body {
-    font-family: Hind, sans-serif
-}
 
 #intro h3,
 #sitewideHeader .login-btn,
@@ -778,9 +775,12 @@ html {
 body {
     font-family: Hind, sans-serif
     -webkit-font-smoothing: antialiased;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, .004)
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .004);
 }
-
+.row{
+  margin-right: 0px;
+  margin-left: 0px;
+}
 .container-fluid {
     padding: 0
 }
@@ -871,6 +871,9 @@ top: -20px;
    font-variant: small-caps;
    margin-left: -3;
 }
+.mobileform{
+  display: none;
+}
 
 /* IntroVideo */
 @media (max-width: 1220px) {
@@ -914,7 +917,16 @@ top: -20px;
         height: 450px;
       }
       .formStyle{
-        width: 300px;
+        width: 75%;
+        color: black;
+        margin: auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        border-bottom-color: black;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        font-weight: 600;
       }
       .emailtitle h1{
         font-size: 30px;
@@ -931,5 +943,32 @@ top: -20px;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+      }
+      .desktopform{
+        display: none;
+      }
+      .mobileform{
+        display: block;
+        position: relative;
+        top: 72%;
+      }
+      ::-webkit-input-placeholder {
+         color: black;
+         font-variant: small-caps;
+      }
+
+      :-moz-placeholder { /* Firefox 18- */
+         color: black;
+         font-variant: small-caps;
+      }
+
+      ::-moz-placeholder {  /* Firefox 19+ */
+         color: black;
+         font-variant: small-caps;
+      }
+
+      :-ms-input-placeholder {
+         color: black;
+         font-variant: small-caps;
       }
 }
