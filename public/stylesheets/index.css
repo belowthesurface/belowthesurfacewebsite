@@ -61,14 +61,6 @@ ul {
 #sticky-social a[class*="medium"],
 #sticky-social a[class*="medium"] span { background: #4AAE83; }
 
-/*#sticky-social a[class*="flickr"],
-#sticky-social a[class*="flickr"]:hover,
-#sticky-social a[class*="flickr"] span { background: #ff0084; }
-
-#sticky-social a[class*="tumblr"],
-#sticky-social a[class*="tumblr"]:hover,
-#sticky-social a[class*="tumblr"] span { background: #32506d; }*/
-
 .test {
   color: blue;
 }
@@ -146,10 +138,6 @@ input:focus {
 
 :-ms-input-placeholder {
    color: #ecf0f1;
-}
-
-.text-vertical-center-form {
-
 }
 
 .text-vertical-center-form h1 {
@@ -339,7 +327,6 @@ input:focus {
   flex-direction: column;
   z-index: : -1;
   width: 100%;
-
 }
 .left_box {
   border: 5px solid #FFFFFF;
@@ -496,8 +483,6 @@ body {
     letter-spacing: .625rem;
     font-weight: 500
 }
-
-
 }
 
 #video .container-fluid{
