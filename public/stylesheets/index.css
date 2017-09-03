@@ -189,7 +189,7 @@ input:focus {
 .solution_container_box3 {
  /* background-color: rgba(41,126,169,0);
   background-image: url("../images/vision.png");*/
-  background: linear-gradient(rgba(51, 102, 153, 0.45), rgba(51, 102, 153, 0.45)      ),  url(../images/vision.png);
+  background: linear-gradient(rgba(51, 102, 153, 0.45), rgba(51, 102, 153, 0.45)      ),  url(../images/new_vision.jpg);
   /*background-image: url("../images/solution_background.jpg");*/
   height: 100vh;
   background-size: cover;
