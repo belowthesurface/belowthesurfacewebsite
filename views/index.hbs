@@ -25,7 +25,7 @@
   </div>
   <div id="paypalbutton" class="donate">
     <div class='donatebutton'>
-      <h4 class='donateword'>Donate Now</h4>
+      <a href="/donate"><h4 class='donateword'>Donate Now</h4></a>
     </div>
   </div>
 
@@ -260,47 +260,5 @@ videoJ.on('ended',function() {
 
 </script>
 
-<script>
-        paypal.Button.render({
-
-            env: 'production', // sandbox | production
-
-            // PayPal Client IDs - replace with your own
-            // Create a PayPal app: https://developer.paypal.com/developer/applications/create
-            client: {
-                sandbox: process.env.SANDBOX_PAYPAL,
-                production: process.env.PRODUCTION_PAYPAL
-            },
-
-            // Show the buyer a 'Pay Now' button in the checkout flow
-            commit: true,
-
-            // payment() is called when the button is clicked
-            payment: function(data, actions) {
-
-                // Make a call to the REST api to create the payment
-                return actions.payment.create({
-                    payment: {
-                        transactions: [
-                            {
-                                amount: { total: '0.01', currency: 'USD' }
-                            }
-                        ]
-                    }
-                });
-            },
-
-            // onAuthorize() is called when the buyer approves the payment
-            onAuthorize: function(data, actions) {
-
-                // Make a call to the REST api to execute the payment
-                return actions.payment.execute().then(function() {
-                    window.alert('Payment Complete!');
-                });
-            }
-
-        }, '#paypalbutton');
-
-</script>
 
 </html>
