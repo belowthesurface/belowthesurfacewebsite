@@ -25,7 +25,7 @@
   </div>
   <div id="paypalbutton" class="donate">
     <div class='donatebutton'>
-      <h4 class='donateword'>Donate Now</h4>
+      <a href="/donate"><h4 class='donateword'>Donate Now</h4></a>
     </div>
   </div>
 
@@ -76,7 +76,7 @@
                 <form>
               {{/if}}
             </div>
-    </div> 
+    </div>
   </div>
 
 </section>
@@ -89,7 +89,7 @@
           <div class='emailunderline'>⚊</div>
 
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <p class='emailparagraph'>To impact a community, you must first understand its people” Below the Surface increases the amount of safe drinking water throughout Ethiopia by empowering its leaders to improve education and enhance gender equality.</p>
+            <p class='emailparagraph'>"To impact a community, you must first understand its people” Below the Surface increases the amount of safe drinking water throughout Ethiopia, empowering its leaders to improve education and enhance gender equality.</p>
           </div>
 
           <div class="text-vertical-center-form desktopform">
@@ -123,7 +123,7 @@
         <div class="solution_block">
         <h1 class="solution_title">CREATE</h1>
         <p class="solution_description">
-          Below the Surface creates drilled well water systems in Ethiopia.that provide communities with clean water from hard to reach aquifers. Each system has a well yield designed specifically to match the water demand peak needs of each community.
+          Below the Surface creates drilled well water systems in Ethiopia that provide communities with clean water from hard to reach aquifers. Each system has a well yield designed specifically to match the water demand peak needs of each community.
          </p>
            <!-- <a href="#" class="btn btn-info btn-lg donate_button" role="button">Donate to our organization</a> -->
          </div>
@@ -168,10 +168,10 @@
       </div>
       <div class="col-md-3 col-sm-4 col-xs-6 about_icon_container">
 
-          <img src="../images/AbeleMesheshaFinish.png" alt="Name" class="profile_pic">
+          <img src="../images/ArjoFinish.png" alt="Name" class="profile_pic">
 
-        <h1 class="name">Abele</h1>
-        <h1 class="title">Fundraising Chair</h1>
+        <h1 class="name">Arjo</h1>
+        <h1 class="title">President</h1>
       </div>
       <div class="col-md-3 col-sm-4 col-xs-6 about_icon_container">
 
@@ -211,12 +211,7 @@
         <h1 class="name">Farida</h1>
         <h1 class="title">Secretary</h1>
       </div>
-      <div class="col-md-3 col-sm-4 col-xs-6 about_icon_container">
 
-           <img src="../images/ArjoFinish.png" alt="Name" class="profile_pic">
-        <h1 class="name">Arjo</h1>
-        <h1 class="title">Community Partnership Liasion</h1>
-      </div>
     </div>
   </div>
   <div class="row row5">
@@ -237,7 +232,7 @@
        </p>
        <h1 class="blog_title">WILL</h1>
        <p class="blog_description">
-        Ideas spark the movement but its action that keeps it going. Those who think the most usually do the least. We choose action over inaction and persist until successful. Consistency outlasts any problem.
+        Ideas spark the movement but it's action that keeps it going. Those who think the most usually do the least. We choose action over inaction and persist until successful. Consistency outlasts any problem.
        </p>
        <h1 class="blog_title">GROWTH</h1>
        <p class="blog_description">
@@ -260,47 +255,5 @@ videoJ.on('ended',function() {
 
 </script>
 
-<script>
-        paypal.Button.render({
-
-            env: 'production', // sandbox | production
-
-            // PayPal Client IDs - replace with your own
-            // Create a PayPal app: https://developer.paypal.com/developer/applications/create
-            client: {
-                sandbox: process.env.SANDBOX_PAYPAL,
-                production: process.env.PRODUCTION_PAYPAL
-            },
-
-            // Show the buyer a 'Pay Now' button in the checkout flow
-            commit: true,
-
-            // payment() is called when the button is clicked
-            payment: function(data, actions) {
-
-                // Make a call to the REST api to create the payment
-                return actions.payment.create({
-                    payment: {
-                        transactions: [
-                            {
-                                amount: { total: '0.01', currency: 'USD' }
-                            }
-                        ]
-                    }
-                });
-            },
-
-            // onAuthorize() is called when the buyer approves the payment
-            onAuthorize: function(data, actions) {
-
-                // Make a call to the REST api to execute the payment
-                return actions.payment.execute().then(function() {
-                    window.alert('Payment Complete!');
-                });
-            }
-
-        }, '#paypalbutton');
-
-</script>
 
 </html>
