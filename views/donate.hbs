@@ -20,6 +20,8 @@
 	    margin-left: auto;
 	    margin-right: auto;
 	    text-align: center;
+	    top: 40%;
+		transform: translateY(-50%);
 	}
 	.donateform{
 		border: 1px solid #dfdfd7;
@@ -125,102 +127,162 @@
 	    font-size: 24px;
 	    color: #369ff4;
 	}
-
 	.creditcard{
-		display: none;
+		font-size: 15px;
+	}
+	.donatebackground{
+		width: 100%;
+		height: 100%;
+		background-image: url('../images/donation.jpg'); 
+		background-size: cover;
+	}
+	.logo{
+	  position: fixed;
+	  top: 10px;
+	  left: 10px;
+	  z-index: 999;
+	}
+	ul {
+	   list-style: none;
+	   margin: 0;
+	   padding: 0;
+	}
+	#sticky-social {
+	   right: 0;
+	   position: fixed;
+	   top: 50%;
+	   transform: translate(0, -50%);
+	   z-index: 100;
+	}
+	#sticky-social a {
+	   background: #333;
+	   color: #fff;
+	   display: block;
+	   height: 30px;
+	   line-height: 35px;
+	   position: relative;
+	   text-align: center;
+	   width: 30px;
+	}
+	#sticky-social a span {
+	   line-height: 30px;
+	   left: 120px;
+	   position: absolute;
+	   text-align:center;
+	   width:120px;
 	}
 
-	.paypal{
-		display: none;
-		background-color: white
-	}
+	#sticky-social a[class*="facebook"],
+	#sticky-social a[class*="facebook"] span { background: #3b5998; }
+
+	#sticky-social a[class*="twitter"],
+	#sticky-social a[class*="twitter"] span { background: #00aced; }
+
+	#sticky-social a[class*="gplus"],
+	#sticky-social a[class*="gplus"] span { background: #dd4b39; }
+
+	#sticky-social a[class*="linkedin"],
+	#sticky-social a[class*="linkedin"] span { background: #007bb6; }
+
+	#sticky-social a[class*="instagrem"],
+	#sticky-social a[class*="instagrem"] span { background: #517fa4; }
+
+	#sticky-social a[class*="pinterest"],
+	#sticky-social a[class*="pinterest"] span { background: #cc2127; }
+
+	#sticky-social a[class*="medium"],
+	#sticky-social a[class*="medium"] span { background: #4AAE83; }
+
+
 
 </style>
 <script type="text/javascript">
 	
-	function donate_onClick() {
-		$('#donatebutton').css("display","none");
-		$('.creditcard').css("display","block");
-		$('.paypal').css("display","block");
-		var value = $("#donateamount").val()
-		$("#word").text("Donating $"+value)
-
-	   		
-	}
-
-	function backtodonate(){
-		$('#donatebutton').css("display","block");
-		$('.creditcard').css("display","none");
-		$('.paypal').css("display","none");
-		$("#word").text("Enter an amount to give")
-	}
-
 </script>
 
+<header>
+
+  <div class="logo">
+       <img style="height: 60px; width: 60px;" src="../images/Belowthesurfacelogo.png" alt="Logo" class="belowthesurfacelogo">
+  </div>
+
+</header>
+
+  <aside id="sticky-social">
+      <ul>
+          <li><a href="https://www.facebook.com" class="fa fa-facebook" target="_blank"><span>Facebook</span></a></li>
+          <li><a href="https://www.twitter.com" class="fa fa-twitter" target="_blank"><span>Twitter</span></a></li>
+          <li><a href="https://www.linkedin.com" class="fa fa-linkedin" target="_blank"><span>LinkedIn</span></a></li>
+          <li><a href="https://www.instagram.com" class="fa fa-instagram" target="_blank"><span>Instagram</span></a></li>
+          <li><a href="https://www.medium.com" class="fa fa-medium" target="_blank"><span>Medium</span></a></li>
+      </ul>
+  </aside>
+
 <body>
+<div class="donatebackground">
+		<div class='donateformcontainer'>
+			<form action='' autocomplete="off" class="donateform">
+				<span class="form-header text-center">
+					<span id='word'>Enter an amount to give</span>
+				</span>
+				<div class='donate-form-body'>
+					<div class="amount-wrapper">
+						<div class="input-wrapper donate-amount">
+							<div class="input-field-container">
 
-<div class='donateformcontainer'>
-	<form action='' autocomplete="off" class="donateform">
-		<span class="form-header text-center">
-			<span id='word'>Enter an amount to give</span>
-		</span>
-		<div class='donate-form-body'>
-			<div class="amount-wrapper">
-				<div class="input-wrapper donate-amount">
-					<div class="input-field-container">
+								<span class="preinput">$</span>
 
-						<span class="preinput">$</span>
+								<input id="donateamount" name='DonateAmounts' type="number" step="0.01" data-amount="true" data-parsley-currency="1,50000" data-parsley-error-message="Please enter a valid amount ($1.00 minimum)" data-parsley-errors-container=".donate-amount.a5826748-d59d-4f86-a042-1e4c030720d5 .error" name="donation_form[amount]" required="" value="">
+								<span class="postinput">USD</span>
+							</div>
+						</div>
 
-						<input id="donateamount" type="number" step="0.01" data-amount="true" data-parsley-currency="1,50000" data-parsley-error-message="Please enter a valid amount ($1.00 minimum)" data-parsley-errors-container=".donate-amount.a5826748-d59d-4f86-a042-1e4c030720d5 .error" name="donation_form[amount]" required="" value="">
-						<span class="postinput">USD</span>
+						<a id="donatebutton" class="btn creditcard" onClick="a_onClick()">
+						<span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>
+							Credit Card</a>
+
+						<div class="btn text-center" style="margin-top: 15px; padding-top: 15;">
+							<div id="paypalbutton" class='paypal'>
+							</div>
+						</div>
+				
 					</div>
 				</div>
-
-				<a id="donatebutton" class="btn" onClick="a_onClick()">Donate</a>
-
-				<button class="btn creditcard" onclick="creditcare()">
-					<span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>
-					Donate via Credit Card
-				</button>
-				<button class="btn paypal" onclick="creditcare()">
-					<span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>
-				</button>
-			
-			</div>
+			</form>
 		</div>
-	</form>
 </div>
-
-	<div id="intro">
-	  <h3>Donate via Credit Card</h3>
-	  <hr/>  
-	  <h3>Donate via Paypal</h3>	
 
 
 	  <script>
+
         paypal.Button.render({
 
             env: 'sandbox', // sandbox | production
 
-            // PayPal Client IDs - replace with your own
-            // Create a PayPal app: https://developer.paypal.com/developer/applications/create
             client: {
-                sandbox:    'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R',
-                production: '<insert production client id>'
+                sandbox:  'Adbi3b9xPdzZFp9W5tIneQM6bmQwDZpxP0Le8khG__neFdTNK7-WipJRfQ3D4dhEKHeHtBOhr5bWRX8o',
+                production: 'AY0HSWnrC26EAMfNwiOu-XRv5UH7VoFaAD1KaYg9AS0siooMjkltCJ67wsJ8tSlzN1nQup607OLKdZxI'
             },
 
             // Show the buyer a 'Pay Now' button in the checkout flow
-            commit: true,
+            style: {
+	            label: 'generic',
+	            size:  'small', // small | medium | large | responsive
+	            shape: 'rect',   // pill | rect
+	            color: 'gold'   // gold | blue | silver | black
+	        },
 
             // payment() is called when the button is clicked
             payment: function(data, actions) {
 
+            	var text = $('#donateamount').val();
+            	console.log(text)
                 // Make a call to the REST api to create the payment
                 return actions.payment.create({
                     payment: {
                         transactions: [
                             {
-                                amount: { total: '0.01', currency: 'USD' }
+                                amount: { total: text, currency: 'USD' }
                             }
                         ]
                     }
@@ -236,7 +298,7 @@
                 });
             }
 
-        }, '#paypal-button-container');
+        }, '#paypalbutton');
     </script>
 
 </body> 

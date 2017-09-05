@@ -1,5 +1,7 @@
 var express = require('express'),
   validator = require('express-validator');
+var paypal = require('paypal-rest-sdk');
+var valid = require('card-validator');
 
 var router = express.Router();
 router.use(validator());
@@ -12,6 +14,12 @@ function validate(req) {
   req.checkBody('email', 'the form is empty').notEmpty();
   req.checkBody("email", "Enter a valid email address.").isEmail();
 }
+
+paypal.configure({
+  'mode': 'sandbox', //sandbox or live
+  'client_id': process.env.SANDBOX_PAYPAL,
+  'client_secret': process.env.SANDBOX_PAYPAL_SECRET
+});
 
 router.get('/', function(req, res) {
   res.render('index');
@@ -72,6 +80,108 @@ router.post('/email', function(req, res) {
 
 router.get('/donate', function(req, res) {
   res.render('donate');
+});
+
+router.post('/donate', function(req, res) {
+  var numberValidation = valid.number(req.body.cardnumber);
+
+  if (!numberValidation.isPotentiallyValid) {
+    res.render('donate', {
+      body: req.body,
+      expressFlash: 'Invalid card number'
+    })
+  } else {
+
+    var monthValidation = valid.expirationMonth(req.body.expirationMonth);
+    var yearValidation = valid.expirationYear(req.body.expirationYear);
+    var cvvValidation = valid.cvv(req.body.cvv);
+
+    if (monthValidation.isPotentiallyValid && yearValidation.isPotentiallyValid) {
+
+      if (cvvValidation.isPotentiallyValid) {
+
+        var create_payment_json = {
+          "intent": "sale",
+          "payer": {
+            "payment_method": "credit_card",
+            "funding_instruments": [{
+              "credit_card": {
+                "type": numberValidation.card.type,
+                "number": req.body.cardnumber,
+                "expire_month": req.body.expirationMonth,
+                "expire_year": req.body.expirationYear,
+                "cvv2": req.body.cvv,
+                "first_name": req.body.firstName,
+                "last_name": req.body.lastName,
+                "billing_address": {
+                  "line1": req.body.addressline,
+                  "city": req.body.cty,
+                  "state": req.body.state,
+                  "postal_code": req.body.postalcode,
+                  "country_code": "US"
+                }
+              }
+            }]
+          },
+          "transactions": [{
+            "amount": {
+              "total": req.body.amount,
+              "currency": "USD",
+              "details": {
+                "subtotal": "7",
+                "tax": "0",
+                "shipping": "0"
+              }
+            },
+            "description": "Donation to Below the Surface"
+          }]
+        };
+
+        paypal.payment.create(create_payment_json, function(error, payment) {
+          if (error) {
+            throw error;
+          } else {
+            console.log("Create Payment Response");
+            console.log(payment);
+          }
+        });
+
+      } else {
+        res.render('donate', {
+          body: req.body,
+          expressFlash: 'Invalid cvv'
+        })
+      }
+
+
+    } else {
+      res.render('donate', {
+        body: req.body,
+        expressFlash: 'Invalid data'
+      })
+    }
+  }
+});
+
+
+router.get('/success', function(req, res) {
+  var paymentId = req.query.paymentId;
+  var payerId = {
+    'payer_id': req.query.PayerID
+  };
+
+  paypal.payment.execute(paymentId, payerId, function(error, payment) {
+    if (error) {
+      console.error(error);
+    } else {
+      if (payment.state === 'approved') {
+        res.send('payment completed successfully');
+        console.log(payment);
+      } else {
+        res.send('payment not successful');
+      }
+    }
+  });
 });
 
 module.exports = router;
