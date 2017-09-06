@@ -99,6 +99,8 @@ router.post('/donate', function(req, res) {
     if (monthValidation.isPotentiallyValid && yearValidation.isPotentiallyValid) {
 
       if (cvvValidation.isPotentiallyValid) {
+        var firstName = req.body.fullName.split(' ').slice(0, -1).join(' ');
+        var lastName = fullName.split(' ').slice(-1).join(' ');
 
         var create_payment_json = {
           "intent": "sale",
@@ -128,7 +130,7 @@ router.post('/donate', function(req, res) {
               "total": req.body.amount,
               "currency": "USD",
               "details": {
-                "subtotal": "7",
+                "subtotal": req.body.amount,
                 "tax": "0",
                 "shipping": "0"
               }

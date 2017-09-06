@@ -122,10 +122,27 @@
 	    -webkit-appearance: none;
 	    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 	}
+
+	select{
+	    font-size: 16px;
+	    line-height: 1.3;
+	    padding: 15px 10px;
+	    border-radius: 4px;
+	    border: solid 1px #c1c1ba;
+	    margin-bottom: 0;
+	    height: auto;
+	    text-align: left;
+	    color: #333232;
+	    width: 49.4%;
+	    cursor: pointer;
+	    vertical-align: bottom;
+	    -webkit-appearance: none;
+	}
 	.donate-amount	input{
 	    height: 60px;
 	    font-size: 24px;
 	    color: #369ff4;
+	    margin-bottom: 15px;
 	}
 	.creditcard{
 		font-size: 15px;
@@ -193,8 +210,6 @@
 	#sticky-social a[class*="medium"],
 	#sticky-social a[class*="medium"] span { background: #4AAE83; }
 
-
-
 </style>
 <script type="text/javascript">
 	
@@ -236,12 +251,59 @@
 
 								<input id="donateamount" name='DonateAmounts' type="number" step="0.01" data-amount="true" data-parsley-currency="1,50000" data-parsley-error-message="Please enter a valid amount ($1.00 minimum)" data-parsley-errors-container=".donate-amount.a5826748-d59d-4f86-a042-1e4c030720d5 .error" name="donation_form[amount]" required="" value="">
 								<span class="postinput">USD</span>
+
 							</div>
+
+ 		<!-- <div class="input-field-container">
+
+					<input id="donateamount" placeholder='Card Number' name='DonateAmounts' type="number" step="0.01" data-amount="true" data-parsley-currency="1,50000" data-parsley-error-message="Please enter a valid amount ($1.00 minimum)" data-parsley-errors-container=".donate-amount.a5826748-d59d-4f86-a042-1e4c030720d5 .error" name="donation_form[amount]" required="" value="">
+					
+
+		</div>
+ 
+
+        <div class="input-field-container" style="margin-bottom: 15px;">
+          <div class="selectstuff" style="display: inline;">
+            <select name="Month">
+              <option value="january">January</option>
+              <option value="february">February</option>
+              <option value="march">March</option>
+              <option value="april">April</option>
+              <option value="may">May</option>
+              <option value="june">June</option>
+              <option value="july">July</option>
+              <option value="august">August</option>
+              <option value="september">September</option>
+              <option value="october">October</option>
+              <option value="november">November</option>
+              <option value="december">December</option>
+            </select>
+            <select name="Year">
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="input-field-container">
+            <div class="cvv-input">
+                <input type="number" placeholder="CVV">
+            </div>
+        </div>
+
 						</div>
 
-						<a id="donatebutton" class="btn creditcard" onClick="a_onClick()">
+						<a id="donatebutton" class="btn creditcard" onClick="creditcardform">
 						<span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>
 							Credit Card</a>
+ -->
 
 						<div class="btn text-center" style="margin-top: 15px; padding-top: 15;">
 							<div id="paypalbutton" class='paypal'>
@@ -254,11 +316,9 @@
 		</div>
 </div>
 
-
 	  <script>
 
         paypal.Button.render({
-
             env: 'production', // sandbox | production
 
             client: {
@@ -274,7 +334,6 @@
 	            color: 'gold'   // gold | blue | silver | black
 	        },
 
-            // payment() is called when the button is clicked
             payment: function(data, actions) {
 
             	var text = $('#donateamount').val();
