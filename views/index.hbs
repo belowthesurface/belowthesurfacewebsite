@@ -31,6 +31,10 @@
     </a>
   </div>
 
+  {{#if expressFlash}}
+          <div class="alert alert-danger">{{expressFlash}}</div>
+  {{/if}}
+  
 </header>
 
   <aside id="sticky-social">
@@ -63,13 +67,13 @@
           <div class="text-vertical-center-form mobileform text-center">
             {{#if checkformessage}}
 
-                    <h1 style="color: white; "> Thank you for helping us. There are {{emailcount}} people waiting for our app.</h1>
+                    <h1 style="color: white; "> Thank you for supporting below the surface charity, you should get a welcome email shortly.</h1>
 
                {{else}}
                  <form method="POST" action="/email">
                     <div class="group">
 
-                      <input type="email" name="email" class="formStyle" placeholder="Email (required)" required />
+                      <input type="text" id="email" name="email" class="formStyle" placeholder="Email (required)" />
                       </div>
                       <div class="col-md-offset-3 col-md-6 col-xs-12 text-center">
                       <button class="btn btn-default btn-round" type="submit" style="color: black; position: relative; top: 80px;">Join the community</button>
@@ -96,8 +100,7 @@
 
           <div class="text-vertical-center-form desktopform">
             {{#if checkformessage}}
-
-                    <h1 style="color: white;"> Thank you for helping us. There are {{emailcount}} people waiting for our app.</h1>
+                    <p style="color: white;"> Thank you for joining the below the surface family, you will get a welcome email from us soon.</p>
 
                {{else}}
                  <form method="POST" action="/email">

@@ -1,18 +1,24 @@
-var express = require('express'),
-  validator = require('express-validator');
+var validator = require('express-validator');
 var paypal = require('paypal-rest-sdk');
 var valid = require('card-validator');
 
-var router = express.Router();
-router.use(validator());
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+sgMail.setSubstitutionWrappers('{{', '}}'); // Configure the substitution tag wrappers globally
+
+var helper = require('sendgrid').mail;
+
 
 var EmailList = require('../models/models').EmailList;
 
+module.exports = function(app) {
+
+app.use(validator());
+
 function validate(req) {
-  req.checkBody('name', 'the form is empty').notEmpty();
-  req.checkBody("name", "Enter a valid name.").isString();
   req.checkBody('email', 'the form is empty').notEmpty();
   req.checkBody("email", "Enter a valid email address.").isEmail();
+  req.checkBody("email", "The length of email is incorrect!.").isByteLength({min: 3, max: 30});
 }
 
 paypal.configure({
@@ -21,48 +27,65 @@ paypal.configure({
   'client_secret': process.env.SANDBOX_PAYPAL_SECRET
 });
 
-router.get('/', function(req, res) {
+app.get('/', function(req, res) {
   res.render('index');
 });
 
-router.post('/email', function(req, res) {
-  validate(req);
-  var errors = req.validationErrors();
+app.post('/email', function(req, res) {
+  var errors = validate(req);
   if (!errors) {
-    EmailList.findOne({
-      email: req.body.email
-    }).exec(function(err, contact) {
+    EmailList.find({
+      email: req.body.email[1]
+    }).exec(function(err, email) {
       if (err) {
-        res.render('contact', {
+        res.render('index', {
           body: req.body,
           expressFlash: err
         });
       } else {
-        if (!contact) {
-          var contact = new EmailList({
-            email: req.body.email
+        console.log(email)
+        console.log(email.length)
+        console.log(req.body.email)
+        if (email.length < 1) {
+          var newemail = new EmailList({
+            email: req.body.email[1]
           });
 
-          contact.save(function(err) {
-
+          newemail.save(function(err) {
             if (!err) {
+              const msg = {
+                to: req.body.email[1],
+                from: 'LeadersBelowTheSurface@gmail.com',
+                subject: "Welcome to Below the Surface!",
+                html: '<p>You have officially subscribed to Below the Surface</p>',
+                templateId: '72b4d688-826c-4b7d-b5bd-f8376e359852'
+              };
 
-              Email.count({}).exec(function(err, count) {
-                res.render('contact', {
+              sgMail.send(msg, (error, result) => {
+                if (error) {
+                  console.log(error);
+                }
+                else {
+                  console.log('Yay! Our templated email has been sent')
+                }
+              });
+
+           
+              res.render('index', {
                   checkformessage: true
-                });
               });
             } else {
               req.flash('error', err);
-              res.render('contact', {
+              res.render('index', {
                 expressFlash: err
               });
             }
           });
+
         } else {
-          res.render('contact', {
+          res.render('index', {
             body: req.body,
-            expressFlash: 'You can sending the same message'
+            expressFlash: 'You already sign up.'
           });
         }
       }
@@ -70,19 +93,20 @@ router.post('/email', function(req, res) {
     });
 
   } else {
-    res.render('contact', {
+    console.log(errors[0])
+    res.render('index', {
       email: req.body.email,
-      expressFlash: errors[0].msg
+      expressFlash: errors[0]
     });
   }
 
 });
 
-router.get('/donate', function(req, res) {
+app.get('/donate', function(req, res) {
   res.render('donate');
 });
 
-router.post('/donate', function(req, res) {
+app.post('/donate', function(req, res) {
   var numberValidation = valid.number(req.body.cardnumber);
 
   if (!numberValidation.isPotentiallyValid) {
@@ -166,7 +190,7 @@ router.post('/donate', function(req, res) {
 });
 
 
-router.get('/success', function(req, res) {
+app.get('/success', function(req, res) {
   var paymentId = req.query.paymentId;
   var payerId = {
     'payer_id': req.query.PayerID
@@ -186,4 +210,4 @@ router.get('/success', function(req, res) {
   });
 });
 
-module.exports = router;
+};
