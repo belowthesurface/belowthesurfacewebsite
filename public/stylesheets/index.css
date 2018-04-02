@@ -256,6 +256,12 @@ input:focus {
   height: 200px;
   margin: 0 auto;
 }
+.board_profile_pic {
+  border-radius: 60%;
+  width: 175px;
+  height: 175px;
+  margin: 0 auto;
+}
 .team_title {
   color: #535353;
   font-weight: 300;
@@ -271,7 +277,7 @@ input:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    margin-bottom: -38%;
     /*flex-direction: column;*/
   }
   .about_container {
@@ -289,7 +295,13 @@ input:focus {
     /*height: 40%;*/
     /*margin-bottom: 20px;*/
   }
-  .profile_pic {
+.about_icon_container:nth-of-type(4) {
+    
+    margin-left: 15%;
+  }
+
+  .profile_pic,
+  .board_profile_pic {
     width: 150px;
     height: 150px;
     margin: 0 auto;
@@ -304,6 +316,13 @@ input:focus {
   }
 
 }
+@media screen and (max-width: 767px)  {
+  .about_container_row4 {
+    margin-bottom: -15%;
+
+    /*flex-direction: column;*/
+  }
+}
 @media screen and (max-width: 600px)  {
   .about_container_row4 {
     background-color: #FFFFFF;
@@ -311,6 +330,7 @@ input:focus {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: -75%;
 
     /*flex-direction: column;*/
   }
@@ -329,7 +349,8 @@ input:focus {
     /*height: 40%;*/
     /*margin-bottom: 20px;*/
   }
-  .profile_pic {
+  .profile_pic,
+  .board_profile_pic {
     width: 125px;
     height: 125px;
     margin: 0 auto;
@@ -870,7 +891,7 @@ top: -20px;
    font-weight: 600;
    font-variant: small-caps;
    margin-left: -3;
-   color: white;
+   color: black;
 }
 .mobileform{
   display: none;
