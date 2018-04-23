@@ -15,7 +15,8 @@ setInterval(function() {
 
 var mongoose = require('mongoose');
 var connect = process.env.MONGODB_URI;
-mongoose.connect(connect, { useMongoClient: true });
+mongoose.connect(connect, { useMongoClient: true, keepAlive: true,
+  reconnectTries: Number.MAX_VALUE});
 
 var hbs = require('express-handlebars')({
   defaultLayout: 'layout',
