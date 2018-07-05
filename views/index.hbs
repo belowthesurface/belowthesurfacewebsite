@@ -13,19 +13,33 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/index.css" />
 
     <link rel="stylesheet" type="text/css" href="stylesheets/nav.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
+
+<div id="loading"></div> 
+    
 <div>
 <div>
 
 <header>
-    <div class="header">
-  <a href="#default" class="logo">CompanyLogo</a>
+
+<div class="header">
+  <div class="logo">
+       <img style="height: 60px; width: 60px;" src="../images/Belowthesurfacelogo.png" alt="Logo" class="belowthesurfacelogo">
+  </div>
   <div class="header-right">
-    <a class="active" href="#home">Home</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
+    <a class="active" href="#ourVision">Our Approach</a>
+    <a href="#whySection">Why</a>
+    <a href="#meetTheTeam">About Us</a>
+  </div>
+  <div id="paypalbutton" class="donate">
+    <a href="/donate" style="text-decoration: none;">
+      <div class='donatebutton'>
+        <h4 class='donateword'>Donate Now</h4>
+      </div>
+    </a>
   </div>
 </div>
 <!--
@@ -59,13 +73,17 @@
 
 </div>
 <br/>
+    
+   
+    
+    
 <section id="video">
 <div class="container-fluid">
   <div class="embed-responsive embed-responsive-16by9 hidden-xs">
     <div id="intro">
-          <video id="coverVid" controls autoplay class="vsc-initialized" >
-            <source src="../video/main.webm" type="video/webm">
-            There was a problem loading video on your browser.
+          <video autoplay controls poster="../images/solution_background.jpg">
+              <source src="../video/main.webm" type="video/webm">
+              <p>There was a problem loading video on your browser.</p>
           </video>
     </div>
   </div>
@@ -130,7 +148,25 @@
      </div>
             
     <section id="ourVision">
-            
+        <div id= "Horizontal" class="visiontitle"><h1>Our Approach</h1></div>
+        <div class="visionquadrant">
+            <i class="fa fa-heart-o" aria-hidden="true" style="font-size:24px"></i>
+            <h4>Create</h4>
+            <p>We create a platform for passionate leaders to explore community service globally. We inspire young philanthropy and an active investment with bettering future generations and the environments they live in.
+            </p>
+        </div>
+        <div class="visionquadrant">
+            <i class="fa fa-sun-o" aria-hidden="true" style="font-size:24px"></i>
+            <h4>Sustain</h4>
+            <p>A project without a system to sustain it doesn't last. In fact, a vast majority of water projects in Ethiopia fail in less than 5 years. Below the Surface partners with local water committees to ensure the communities own and maintain their solutions.
+            </p>
+        </div>
+        <div class="visionquadrant">
+            <i class="fa fa-clock-o" aria-hidden="true" style="font-size:24px"></i>
+            <h4>Vision</h4>
+            <p>Clean water reshapes entire communities. With more kids able to pursue education and improved health, our solutions empower leaders to develop the places they care about most. Below the Surface is abuot progresss - starting with the people. 
+            </p>
+        </div>
     </section>
 
 
@@ -175,15 +211,50 @@
       </div>
     </div>
 -->
+            
+    <div class="container-fluid" style="border-top: 5px solid;">
 
-    <div class="row about_container_row4">
+      <section id="whySection" name="whySection" class="text-center">
+        <div class="row">
+          <div id= "Horizontal" class="whytitle"><h3><i>"Access to clean water means everything for the future."</i></h3></div>
+          <div class='emailunderline'>⚊</div>
+
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="whyquadrant">
+              <h4>Education</h4>
+              <p>
+              Over 443 million days of school spent absent are related to preventable water-related diseases. In arid regions of Ethiopia, schools often experience "dry years", which means the kids miss several months of school because their families are constantly searching for water. With all this time away from school, the local children are forced to repeat an entire grade every few years.  
+              </p>
+            </div>
+            <div class="whyquadrant">
+              <h4>Gender Equality</h4>
+              <p>Women and young girls are the primary leaders in water collection. In sub-saharan Africa alone, they walk for an estimated 40 billion hours per year. Water collection takes untold hours and leaves girls and women with time to invest in themselves. With access to clean water more time can spent in school, with family, and developing skills needed to advance socio-economically. </p>
+            </div>
+            <div class="whyquadrant">
+              <h4>Health</h4>
+              <p>
+                Ethiopia has the second worst drinking water in the world with a 43 point gap between rural and urban access to water. Dirty water and poor sanitation claim the lives of more than 8,500 children under the age of 5 every year. Only 30% of Ethiopia's rural areas have access to clean water, and nearly 96% of its rural areas lacks adequate sanitation
+                </p>
+            </div>
+            <div class="whyquadrant">
+              <h4>Agriculture</h4>
+              <p>
+               Agriculture is the foundation of Ethiopia's economy, accounting for half of its GDP. Population increases and global warming place immense pressure on subsistence farming based communities and the need for water. It is predicted that a 19% increase in global agricultural water consumption and a 60% increase in global food demand will occur by 2050. 
+               </p>
+            </div>
+          </div>
+          
+      </section>
+     </div>
+
+    <div id="meetTheTeam" class="row about_container_row4">
       <div class="about_container">
         <h1 class="team_title">MEET THE TEAM</h1>
       <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container ">
 
           <img src="../images/jetuwr_img.png" alt="Name" class="profile_pic">
 
-        <h1 class="name">Jetuwr</h1>
+        <a href="https://www.linkedin.com/in/jetuwr-davis-345158b5/" target="_blank"><h1 class="name">Jetuwr Davis</h1></a>
         <h1 class="title">Founder/President</h1>
       </div>
           
@@ -191,62 +262,67 @@
 
           <img src="../images/arjo_img.png" alt="Name" class="profile_pic">
 
-        <h1 class="name">Arjo</h1>
+        <h1 class="name">Arjo Adam</h1>
         <h1 class="title">Vice President</h1>
       </div>
           
-      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container" onclick="location.href='https://www.linkedin.com/in/ensouli/';" style="cursor: pointer;">
+      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
 
           <img src="../images/ezzat_img.png" alt="Name" class="profile_pic">
-
-        <h1 class="name">Ezzat Nsouli</h1>
-        <h1 class="title">Operations Chair</h1>
+          
+        <a href="https://www.linkedin.com/in/ensouli/" target="_blank"><h1 class="name">Ezzat Nsouli</h1></a>
+        <h1 class="title">Operations</h1>
       </div>
           
-      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container" onclick="location.href='https://www.linkedin.com/in/sina-musie/';" style="cursor: pointer;">
+      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
 
           <img src="../images/sina_img.png" alt="Name" class="profile_pic">
+          
+        <a href="https://www.linkedin.com/in/sina-musie/" target="_blank"><h1 class="name">Sina Musie</h1></a>
+        <h1 class="title">Public Relations</h1>
+      </div>
 
-        <h1 class="name">Sina Musie</h1>
-        <h1 class="title">Public Relations Chair</h1>
+      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
+          <img src="../images/seifu_img.png" alt="Name" class="profile_pic">
+
+        <a href="https://www.linkedin.com/in/matthew-seifu-494686a7/" target="_blank"><h1 class="name">Matthew Seifu</h1></a>
+        <h1 class="title">Fund Development</h1>
       </div>
 
       <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
 
-          <img src="../images/farida_img.png" alt="Name" class="profile_pic">
-
-        <h1 class="name">Farida Moalim</h1>
-        <h1 class="title">Fundraising Chair</h1>
+        <img src="../images/dk_img.png" alt="Name" class="profile_pic">
+        <a href="https://www.linkedin.com/in/darrell-kellie-bell-355029114/" target="_blank"><h1 class="name">D-K Bell</h1></a>
+        <h1 class="title">Social Media</h1>
       </div>
+          
+      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
 
-      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container" onclick="location.href='https://www.linkedin.com/in/darrell-kellie-bell-355029114/';" style="cursor: pointer;">
-
-          <img src="../images/dk_img.png" alt="Name" class="profile_pic">
-
-        <h1 class="name">DK Bell</h1>
-        <h1 class="title">Social Media Chair</h1>
+        <img src="../images/brandon_img.png" alt="Name" class="profile_pic">
+        <a href="https://www.linkedin.com/in/brandon-rodgers/" target="_blank"><h1 class="name">Brandon Rodgers </h1></a>
+        <h1 class="title">Membership</h1>
       </div>
 
     </div>
   </div>
             
-      <div class="row about_container_row4">
+    <div id="meetTheBoard" class="row about_container_row4">
       <div class="about_container">
         <h1 class="team_title">MEET THE BOARD</h1>
       
-      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container" onclick="location.href='https://www.linkedin.com/in/clarencendangam/';" style="cursor: pointer;">
+      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
 
           <img src="../images/clarence.png" alt="Name" class="board_profile_pic">
-
-        <h1 class="name">Clarence Ndangam</h1>
+          
+        <a href="https://www.linkedin.com/in/clarencendangam/" target="_blank"><h1 class="name">Clarence Ndangam</h1></a>
         <h1 class="title">Associate Director at Procter and Gamble</h1>
       </div>
           
-      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container" onclick="location.href='https://www.linkedin.com/in/megnot/';" style="cursor: pointer;">
+      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
 
           <img src="../images/megnot.jpeg" alt="Name" class="board_profile_pic">
 
-        <h1 class="name">Megnot Hailu</h1>
+        <a href="https://www.linkedin.com/in/megnot/" target="_blank"><h1 class="name">Megnot Hailu</h1></a>
         <h1 class="title">Associate Partner and Delivery Executive at IBM</h1>
       </div>
           
@@ -254,7 +330,8 @@
 
           <img src="../images/alex.png" alt="Name" class="board_profile_pic">
 
-        <h1 class="name">Alex Schutte</h1>
+    
+        <a href="https://www.linkedin.com/in/alexschutte/" target="_blank"><h1 class="name">Alex Schutte</h1></a>
         <h1 class="title">Principal Digital Marketing Strategist at Paycor</h1>
       </div>
           
@@ -262,15 +339,15 @@
 
           <img src="../images/daveed.jpg" alt="Name" class="board_profile_pic">
 
-        <h1 class="name">Daveed Jefferson</h1>
+        <h1 class="name">Samuel Jefferson</h1>
         <h1 class="title">Senior IT Consultant </h1>
       </div>
 
-      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container" onclick="location.href='https://www.linkedin.com/in/karl-parker-1976021/';" style="cursor: pointer;">
+      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
 
           <img src="../images/karl.png" alt="Name" class="board_profile_pic">
 
-        <h1 class="name">Karl Parker</h1>
+        <a href="https://www.linkedin.com/in/karl-parker-1976021/" target="_blank"><h1 class="name">Karl Parker</h1></a>
         <h1 class="title">CEO and President of Parker Energy Solutions</h1>
       </div>
 
@@ -320,12 +397,18 @@
 
 <script type="text/javascript">
 
-var videoJ= $('#coverVid');
+    var videoJ= $('#coverVid');
 
-videoJ.on('ended',function() {
-   this.currentTime = 2600;
-}, false);
+    videoJ.on('ended',function() {
+       this.currentTime = 2600;
+    }, false);
 
+ 
+    
+    
+    $(window).ready(function() {
+        $('#loading').hide();
+    });
 
 </script>
 
