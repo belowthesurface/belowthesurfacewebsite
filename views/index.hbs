@@ -1,48 +1,49 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Below The Surface</title>
+  <meta charset="UTF-8">
+  <title>Below The Surface</title>
 
-<meta name="description" content="Below the Surface is a young, vibrant non-profit organization that uses a watershed approach to engineer solutions to water insecurity in Ethiopia. We believe understanding the culture of each community is vital to building sustainable, independent communities." />
+  <meta name="description" content="Below the Surface is a young, vibrant non-profit organization that uses a watershed approach to engineer solutions to water insecurity in Ethiopia. We believe understanding the culture of each community is vital to building sustainable, independent communities." />
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/index.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/index.css" />
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/nav.css" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="stylesheets/nav.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
 
-<div id="loading"></div> 
-    
-<div>
-<div>
+  <div id="loading"></div>
 
-<header>
+  <div>
+    <div>
 
-<div class="header">
-  <div class="logo">
-       <img style="height: 60px; width: 60px;" src="../images/Belowthesurfacelogo.png" alt="Logo" class="belowthesurfacelogo">
-  </div>
-  <div class="header-right">
-    <a class="active" href="#ourVision">Our Approach</a>
-    <a href="#whySection">Why</a>
-    <a href="#meetTheTeam">About Us</a>
-  </div>
-  <div id="paypalbutton" class="donate">
-    <a href="/donate" style="text-decoration: none;">
-      <div class='donatebutton'>
-        <h4 class='donateword'>Donate Now</h4>
-      </div>
-    </a>
-  </div>
-</div>
-<!--
+      <header>
+
+        <div class="header">
+          <div class="logo">
+            <img style="height: 60px; width: 60px;" src="../images/Belowthesurfacelogo.png" alt="Logo" class="belowthesurfacelogo">
+          </div>
+          <div class="header-right">
+            <a class="active" href="#ourVision">Our Approach</a>
+            <a href="#whySection">Why</a>
+            <a href="#meetTheTeam">About Us</a>
+          </div>
+          <div id="paypalbutton" class="donate">
+            <a href="/donate" style="text-decoration: none;">
+              <div class='donatebutton'>
+                <h4 class='donateword'>Donate Now</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!--
   <div class="logo">
        <img style="height: 60px; width: 60px;" src="../images/Belowthesurfacelogo.png" alt="Logo" class="belowthesurfacelogo">
   </div>
@@ -55,121 +56,135 @@
   </div>
 -->
 
-  {{#if expressFlash}}
-          <div class="alert alert-danger">{{expressFlash}}</div>
-  {{/if}}
-  
-</header>
+        {{#if expressFlash}}
+        <div class="alert alert-danger">{{expressFlash}}</div>
+        {{/if}}
 
-  <aside id="sticky-social">
-      <ul>
+      </header>
+
+      <aside id="sticky-social">
+        <ul>
           <li><a href="https://www.facebook.com/Below.Surface/" class="fa fa-facebook" target="_blank"><span>Facebook</span></a></li>
           <li><a href="https://twitter.com/_belowsurface" class="fa fa-twitter" target="_blank"><span>Twitter</span></a></li>
           <li><a href="https://www.linkedin.com/company/25048013/" class="fa fa-linkedin" target="_blank"><span>LinkedIn</span></a></li>
           <li><a href="https://www.instagram.com/belowsurface_/" class="fa fa-instagram" target="_blank"><span>Instagram</span></a></li>
           <li><a href="https://medium.com/@leadersbelowthesurface" class="fa fa-medium" target="_blank"><span>Medium</span></a></li>
-      </ul>
-  </aside>
+        </ul>
+      </aside>
 
-</div>
-<br/>
-    
-   
-    
-    
-<section id="video">
-<div class="container-fluid">
-  <div class="embed-responsive embed-responsive-16by9 hidden-xs">
-    <div id="intro">
-          <video autoplay controls poster="../images/solution_background.jpg">
+    </div>
+    <br />
+
+
+
+
+    <section id="video">
+      <div class="container-fluid">
+        <div class="embed-responsive embed-responsive-16by9 hidden-xs">
+          <div id="intro">
+            <video autoplay controls poster="../images/solution_background.jpg">
               <source src="../video/main.webm" type="video/webm">
               <p>There was a problem loading video on your browser.</p>
-          </video>
-    </div>
-  </div>
-</section>
-
-<section id="mobileversion">
-  <div class="container-fluid">
-    <div class='mobilemain'>
-          <div class="text-vertical-center-form mobileform text-center">
-            {{#if checkformessage}}
-                    <h1 style="color: white; "> Thank you for supporting Below the Surface, and joining our mission to reshape water sustainability!, a monthly newsletter will be sent to you email.</h1>
-               {{else}}
-                 <form method="POST" action="/email">
-                    <div class="group">
-                      <input type="text" id="email" name="email" class="formStyle" placeholder="Email (required)" />
-                      </div>
-                      <div class="col-md-offset-3 col-md-6 col-xs-12 text-center">
-                      <button class="btn btn-default btn-round" type="submit" style="color: black; position: relative; top: 80px;">Join the community</button>
-                      </div>
-                <form>
-              {{/if}}
-            </div>
-    </div>
-  </div>
-
-</section>
-
- <div class="container-fluid" id="page" style="border-top: 5px solid;">
-
-      <section id="whoWeAre" name="whoWeAre" class="text-center">
-        <div class="row">
-          <div id= "Horizontal" class="emailtitle"><h1>Who Are We?</h1></div>
-          <div class='emailunderline'>⚊</div>
-
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <p class='emailparagraph'>"To impact a community, you must first understand its people” Below the Surface increases the amount of safe drinking water throughout Ethiopia, empowering its leaders to improve education and enhance gender equality.</p>
-          </div>
-
-          <div class="text-vertical-center-form desktopform">
-            {{#if checkformessage}}
-                    <p style="color: white;"> Thank you for joining the below the surface family, you will get a welcome email from us soon.</p>
-
-               {{else}}
-                 <form method="POST" action="/email">
-                    <div class="group">
-
-                      <input type="email" name="email" class="formStyle" placeholder="Email (required)" required />
-                      </div>
-                      <div class="col-md-offset-3 col-md-6 ">
-                      <button class="btn btn-default btn-round" type="submit">Join the community</button>
-                      </div>
-
-                <form>
-              {{/if}}
-
-        </div>
-      </section>
-     </div>
-            
-    <section id="ourVision">
-        <div id= "Horizontal" class="visiontitle"><h1>Our Approach</h1></div>
-        <div class='visioncontainer'>
-          <div class="visionquadrant">
-              <i class="fa fa-heart-o" aria-hidden="true" style="font-size:24px"></i>
-              <h4>Create</h4>
-              <p>We create a platform for passionate leaders to explore community service globally. We inspire young philanthropy and an active investment with bettering future generations and the environments they live in.
-              </p>
-          </div>
-          <div class="visionquadrant">
-              <i class="fa fa-sun-o" aria-hidden="true" style="font-size:24px"></i>
-              <h4>Sustain</h4>
-              <p>A project without a system to sustain it doesn't last. In fact, a vast majority of water projects in Ethiopia fail in less than 5 years. Below the Surface partners with local water committees to ensure the communities own and maintain their solutions.
-              </p>
-          </div>
-          <div class="visionquadrant">
-              <i class="fa fa-clock-o" aria-hidden="true" style="font-size:24px"></i>
-              <h4>Vision</h4>
-              <p>Clean water reshapes entire communities. With more kids able to pursue education and improved health, our solutions empower leaders to develop the places they care about most. Below the Surface is about progress - starting with the people. 
-              </p>
+            </video>
           </div>
         </div>
     </section>
 
+    <section id="mobileversion">
+      <div class="container-fluid">
+        <div class='mobilemain'>
+          <div class="text-vertical-center-form mobileform text-center">
+            {{#if checkformessage}}
+            <h1 style="color: white; "> Thank you for supporting Below the Surface, and joining our mission to reshape
+              water sustainability!, a monthly newsletter will be sent to you email.</h1>
+            {{else}}
+            <form method="POST" action="/email">
+              <div class="group">
+                <input type="text" id="email" name="email" class="formStyle" placeholder="Email (required)" />
+              </div>
+              <div class="col-md-offset-3 col-md-6 col-xs-12 text-center">
+                <button class="btn btn-default btn-round" type="submit" style="color: black; position: relative; top: 80px;">Join
+                  the community</button>
+              </div>
+              <form>
+                {{/if}}
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="container-fluid" id="page" style="border-top: 5px solid;">
+
+      <section id="whoWeAre" name="whoWeAre" class="text-center">
+        <div class="row">
+          <div id="Horizontal" class="emailtitle">
+            <h1>Who Are We?</h1>
+          </div>
+          <div class='emailunderline'>⚊</div>
+
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <p class='emailparagraph'>"To impact a community, you must first understand its people” Below the Surface
+              increases the amount of safe drinking water throughout Ethiopia, empowering its leaders to improve
+              education and enhance gender equality.</p>
+          </div>
+
+          <div class="text-vertical-center-form desktopform">
+            {{#if checkformessage}}
+            <p style="color: white;"> Thank you for joining the below the surface family, you will get a welcome email
+              from us soon.</p>
+
+            {{else}}
+            <form method="POST" action="/email">
+              <div class="group">
+
+                <input type="email" name="email" class="formStyle" placeholder="Email (required)" required />
+              </div>
+              <div class="col-md-offset-3 col-md-6 ">
+                <button class="btn btn-default btn-round" type="submit">Join the community</button>
+              </div>
+
+              <form>
+                {{/if}}
+
+          </div>
+      </section>
+    </div>
+
+    <section id="ourVision">
+      <div id="Horizontal" class="visiontitle">
+        <h1>Our Approach</h1>
+      </div>
+      <div class='visioncontainer'>
+        <div class="visionquadrant">
+          <i class="fa fa-heart-o" aria-hidden="true" style="font-size:24px"></i>
+          <h4>Create</h4>
+          <p>We create a platform for passionate leaders to explore community service globally. We inspire young
+            philanthropy and an active investment with bettering future generations and the environments they live in.
+          </p>
+        </div>
+        <div class="visionquadrant">
+          <i class="fa fa-sun-o" aria-hidden="true" style="font-size:24px"></i>
+          <h4>Sustain</h4>
+          <p>A project without a system to sustain it doesn't last. In fact, a vast majority of water projects in
+            Ethiopia fail in less than 5 years. Below the Surface partners with local water committees to ensure the
+            communities own and maintain their solutions.
+          </p>
+        </div>
+        <div class="visionquadrant">
+          <i class="fa fa-clock-o" aria-hidden="true" style="font-size:24px"></i>
+          <h4>Vision</h4>
+          <p>Clean water reshapes entire communities. With more kids able to pursue education and improved health, our
+            solutions empower leaders to develop the places they care about most. Below the Surface is about progress -
+            starting with the people.
+          </p>
+        </div>
+      </div>
+    </section>
 
 
-<!--
+
+    <!--
     <div class="row row3">
       <div class="col-md-12 solution_container_box1">
         <div class="col-md-6 solution_inner_container">
@@ -209,205 +224,251 @@
       </div>
     </div>
 -->
-            
+
     <div class="container-fluid" style="border-top: 5px solid;">
 
       <section id="whySection" name="whySection" class="text-center">
         <div class="row">
-          <div id= "Horizontal" class="whytitle"><h3><i>"Access to clean water means everything for the future."</i></h3></div>
+          <div id="Horizontal" class="whytitle">
+            <h3><i>"Access to clean water means everything for the future."</i></h3>
+          </div>
           <div class='emailunderline'>⚊</div>
 
           <div class='container'>
-              <div class="whyquadrant">
-                <h4>Education</h4>
-                <p>
-                Over 443 million days of school spent absent are related to preventable water-related diseases. In arid regions of Ethiopia, schools often experience "dry years", which means the kids sometimes miss several months of school because their families are constantly searching for water. With all this time away from school, some local children are forced to repeat entire grades every few years.  
-                </p>
-              </div>
-              <div class="whyquadrant">
-                <h4>Gender Equality</h4>
-                <p>Women and young girls are the primary leaders in water collection. In sub-saharan Africa alone, they walk for an estimated 40 billion hours per year. Water collection takes untold hours and leaves girls and women with no time to invest in themselves. With access to clean water more time can be spent in school, with family, and developing skills needed to advance socio-economically. </p>
-              </div>
-              <div class="whyquadrant">
-                <h4>Health</h4>
-                <p>
-                  Ethiopia has the second worst drinking water in the world with a 43 point gap between rural and urban access to water. Dirty water and poor sanitation claim the lives of more than 8,500 children under the age of 5 every year. Only 30% of Ethiopia's rural areas have access to clean water, and nearly 96% of its rural areas lacks adequate sanitation
-                  </p>
-              </div>
-              <div class="whyquadrant">
-                <h4>Agriculture</h4>
-                <p>
-                 Agriculture is the foundation of Ethiopia's economy, accounting for half of its GDP. Population increases and global warming place immense pressure on subsistence farming based communities and the need for water. It is predicted that a 19% increase in global agricultural water consumption and a 60% increase in global food demand will occur by 2050. 
-                 </p>
-              </div>
+            <div class="whyquadrant">
+              <h4>Education</h4>
+              <p>
+                Over 443 million days of school spent absent are related to preventable water-related diseases. In arid
+                regions of Ethiopia, schools often experience "dry years", which means the kids sometimes miss several
+                months of school because their families are constantly searching for water. With all this time away
+                from school, some local children are forced to repeat entire grades every few years.
+              </p>
+            </div>
+            <div class="whyquadrant">
+              <h4>Gender Equality</h4>
+              <p>Women and young girls are the primary leaders in water collection. In sub-saharan Africa alone, they
+                walk for an estimated 40 billion hours per year. Water collection takes untold hours and leaves girls
+                and women with no time to invest in themselves. With access to clean water more time can be spent in
+                school, with family, and developing skills needed to advance socio-economically. </p>
+            </div>
+            <div class="whyquadrant">
+              <h4>Health</h4>
+              <p>
+                Ethiopia has the second worst drinking water in the world with a 43 point gap between rural and urban
+                access to water. Dirty water and poor sanitation claim the lives of more than 8,500 children under the
+                age of 5 every year. Only 30% of Ethiopia's rural areas have access to clean water, and nearly 96% of
+                its rural areas lacks adequate sanitation
+              </p>
+            </div>
+            <div class="whyquadrant">
+              <h4>Agriculture</h4>
+              <p>
+                Agriculture is the foundation of Ethiopia's economy, accounting for half of its GDP. Population
+                increases and global warming place immense pressure on subsistence farming based communities and the
+                need for water. It is predicted that a 19% increase in global agricultural water consumption and a 60%
+                increase in global food demand will occur by 2050.
+              </p>
+            </div>
           </div>
 
-          
+
       </section>
-     </div>
+    </div>
 
     <div id="meetTheTeam">
       <div class="container">
         <h1 class="team_title">MEET THE TEAM</h1>
-      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container ">
+        <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container ">
 
           <img src="../images/jetuwr_img.png" alt="Name" class="profile_pic">
 
-        <a href="https://www.linkedin.com/in/jetuwr-davis-345158b5/" target="_blank"><h1 class="name">Jetuwr Davis</h1></a>
-        <h1 class="title">Founder/President</h1>
-      </div>
-          
-      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
+          <a href="https://www.linkedin.com/in/jetuwr-davis-345158b5/" target="_blank">
+            <h1 class="name">Jetuwr Davis</h1>
+          </a>
+          <h1 class="title">Founder/President</h1>
+        </div>
 
-          <img src="../images/arjo_img.png" alt="Name" class="profile_pic">
 
-        <h1 class="name">Arjo Adam</h1>
-        <h1 class="title">Vice President</h1>
-      </div>
-          
-      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
+
+        <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
 
           <img src="../images/ezzat_img.png" alt="Name" class="profile_pic">
-          
-        <a href="https://www.linkedin.com/in/ensouli/" target="_blank"><h1 class="name">Ezzat Nsouli</h1></a>
-        <h1 class="title">Operations</h1>
-      </div>
-          
-      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
+
+          <a href="https://www.linkedin.com/in/ensouli/" target="_blank">
+            <h1 class="name">Ezzat Nsouli</h1>
+          </a>
+          <h1 class="title">Operations</h1>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
 
           <img src="../images/sina_img.png" alt="Name" class="profile_pic">
-          
-        <a href="https://www.linkedin.com/in/sina-musie/" target="_blank"><h1 class="name">Sina Musie</h1></a>
-        <h1 class="title">Public Relations</h1>
-      </div>
 
-      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
+          <a href="https://www.linkedin.com/in/sina-musie/" target="_blank">
+            <h1 class="name">Sina Musie</h1>
+          </a>
+          <h1 class="title">Public Relations</h1>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
           <img src="../images/seifu_img.png" alt="Name" class="profile_pic">
 
-        <a href="https://www.linkedin.com/in/matthew-seifu-494686a7/" target="_blank"><h1 class="name">Matthew Seifu</h1></a>
-        <h1 class="title">Fund Development</h1>
+          <a href="https://www.linkedin.com/in/matthew-seifu-494686a7/" target="_blank">
+            <h1 class="name">Matthew Seifu</h1>
+          </a>
+          <h1 class="title">Fund Development</h1>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
+
+          <img src="../images/mintewab.png" alt="Name" class="profile_pic">
+          <a href="https://www.linkedin.com/in/darrell-kellie-bell-355029114/" target="_blank">
+            <h1 class="name">Mintewab Bereket</h1>
+          </a>
+          <h1 class="title">Social Media</h1>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
+
+          <img src="../images/brandon_img.png" alt="Name" class="profile_pic">
+          <a href="https://www.linkedin.com/in/brandon-rodgers/" target="_blank">
+            <h1 class="name">Brandon Rodgers </h1>
+          </a>
+          <h1 class="title">Membership</h1>
+        </div>
+
+
+
       </div>
-
-      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
-
-        <img src="../images/dk_img.png" alt="Name" class="profile_pic">
-        <a href="https://www.linkedin.com/in/darrell-kellie-bell-355029114/" target="_blank"><h1 class="name">D-K Bell</h1></a>
-        <h1 class="title">Social Media</h1>
-      </div>
-          
-      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
-
-        <img src="../images/brandon_img.png" alt="Name" class="profile_pic">
-        <a href="https://www.linkedin.com/in/brandon-rodgers/" target="_blank"><h1 class="name">Brandon Rodgers </h1></a>
-        <h1 class="title">Membership</h1>
-      </div>
-
     </div>
-  </div>
-            
+
     <div id="meetTheBoard">
       <div class="container">
-      <h1 class="board_title">MEET THE BOARD</h1>
-      
-      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
+        <h1 class="board_title">MEET THE BOARD</h1>
+
+        <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
 
           <img src="../images/clarence.png" alt="Name" class="board_profile_pic">
-          
-        <a href="https://www.linkedin.com/in/clarencendangam/" target="_blank"><h1 class="nameAdvisor">Clarence Ndangam</h1></a>
-        <h1 class="title"></h1>
-      </div>
-          
-      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
+
+          <a href="https://www.linkedin.com/in/clarencendangam/" target="_blank">
+            <h1 class="nameAdvisor">Clarence Ndangam</h1>
+          </a>
+          <h1 class="title"></h1>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
 
           <img src="../images/megnot.jpeg" alt="Name" class="board_profile_pic">
 
-        <a href="https://www.linkedin.com/in/megnot/" target="_blank"><h1 class="nameAdvisor">Megnot Hailu</h1></a>
-        <h1 class="title"></h1>
-      </div>
-          
-      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container" onclick="location.href='https://www.linkedin.com/in/alexschutte/';" style="cursor: pointer;">
+          <a href="https://www.linkedin.com/in/megnot/" target="_blank">
+            <h1 class="nameAdvisor">Megnot Hailu</h1>
+          </a>
+          <h1 class="title"></h1>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container" onclick="location.href='https://www.linkedin.com/in/alexschutte/';"
+          style="cursor: pointer;">
 
           <img src="../images/alex.png" alt="Name" class="board_profile_pic">
 
-    
-        <a href="https://www.linkedin.com/in/alexschutte/" target="_blank"><h1 class="nameAdvisor">Alex Schutte</h1></a>
-        <h1 class="title"></h1>
-      </div>
-          
-      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container" >
+
+          <a href="https://www.linkedin.com/in/alexschutte/" target="_blank">
+            <h1 class="nameAdvisor">Alex Schutte</h1>
+          </a>
+          <h1 class="title"></h1>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
 
           <img src="../images/daveed.jpg" alt="Name" class="board_profile_pic">
 
-        <h1 class="nameAdvisor">Samuel Jefferson</h1>
-        <h1 class="title"></h1>
-      </div>
+          <h1 class="nameAdvisor">Samuel Jefferson</h1>
+          <h1 class="title"></h1>
+        </div>
 
-      <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
+        <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
 
           <img src="../images/karl.png" alt="Name" class="board_profile_pic">
 
-        <a href="https://www.linkedin.com/in/karl-parker-1976021/" target="_blank"><h1 class="nameAdvisor">Karl Parker</h1></a>
-        <h1 class="title"></h1>
-      </div>
-
-
-    </div>
-  </div>
-            
-  <div class="row row5">
-    <div class="blog_container_box1">
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 blog_inner_container_left">
-        <div class="left_box">
-       <h1 class="blog_title_left">RECENT POSTS</h1>
-       <p class="blog_description_left">
-         Read about our journey to building better communities in Ethiopia.
-       </p>
-       <a  href="https://medium.com/@leadersbelowthesurface/a-girl-from-ambentu-1d5f49bc8f8"><button class="blog_button" type="button">Check out our blog</button></a>
-     </div>
-     </div>
-       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 blog_inner_container_right">
-       <h1 class="blog_title">HEART</h1>
-       <p class="blog_description">
-       Below the Surface grew from a passion of young leaders excited about changing communities now instead of later. Leaders on our team are passionate about not only change-but change that is sustainable.
-       </p>
-       <h1 class="blog_title">WILL</h1>
-       <p class="blog_description">
-        Ideas spark the movement but it's action that keeps it going. Those who think the most usually do the least. We choose action over inaction and persist until successful. Consistency outlasts any problem.
-       </p>
-       <h1 class="blog_title">GROWTH</h1>
-       <p class="blog_description">
-       Below the Surface for us is not just about helping to solve the water crisis in Ethiopia. It’s about growing leaders and rebuilding entire communities. Lasting change comes only from empowering the people in need.
-       </p>
+          <a href="https://www.linkedin.com/in/karl-parker-1976021/" target="_blank">
+            <h1 class="nameAdvisor">Karl Parker</h1>
+          </a>
+          <h1 class="title"></h1>
         </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-6 about_icon_container">
+
+          <img src="../images/Teresa.png" alt="Name" class="board_profile_pic">
+
+          <a href="https://www.linkedin.com/in/karl-parker-1976021/" target="_blank">
+            <h1 class="nameAdvisor">Teresa Snyder</h1>
+          </a>
+          <h1 class="title"></h1>
+        </div>
+
+
+      </div>
     </div>
-  </div>
+
+    <div class="row row5">
+      <div class="blog_container_box1">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 blog_inner_container_left">
+          <div class="left_box">
+            <h1 class="blog_title_left">RECENT POSTS</h1>
+            <p class="blog_description_left">
+              Read about our journey to building better communities in Ethiopia.
+            </p>
+            <a href="https://medium.com/@leadersbelowthesurface/a-girl-from-ambentu-1d5f49bc8f8"><button class="blog_button"
+                type="button">Check out our blog</button></a>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 blog_inner_container_right">
+          <h1 class="blog_title">HEART</h1>
+          <p class="blog_description">
+            Below the Surface grew from a passion of young leaders excited about changing communities now instead of
+            later. Leaders on our team are passionate about not only change-but change that is sustainable.
+          </p>
+          <h1 class="blog_title">WILL</h1>
+          <p class="blog_description">
+            Ideas spark the movement but it's action that keeps it going. Those who think the most usually do the
+            least. We choose action over inaction and persist until successful. Consistency outlasts any problem.
+          </p>
+          <h1 class="blog_title">GROWTH</h1>
+          <p class="blog_description">
+            Below the Surface for us is not just about helping to solve the water crisis in Ethiopia. It’s about
+            growing leaders and rebuilding entire communities. Lasting change comes only from empowering the people in
+            need.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
-    
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118027547-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
 
   gtag('config', 'UA-118027547-1');
-</script> 
+</script>
 
 <script type="text/javascript">
 
-    var videoJ= $('#coverVid');
+  var videoJ = $('#coverVid');
 
-    videoJ.on('ended',function() {
-       this.currentTime = 2600;
-    }, false);
+  videoJ.on('ended', function () {
+    this.currentTime = 2600;
+  }, false);
 
- 
-    
-    
-    $(window).ready(function() {
-        $('#loading').hide();
-    });
+
+
+
+  $(window).ready(function () {
+    $('#loading').hide();
+  });
 
 </script>
 
