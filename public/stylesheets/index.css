@@ -40,6 +40,12 @@ ul {
    width:120px;
 }
 
+#social-media-img {
+  height: 125px;
+  width: 125px;
+  margin-bottom: 25px;
+}
+
 #sticky-social a[class*="facebook"],
 #sticky-social a[class*="facebook"] span { background: #3b5998; }
 
