@@ -31,7 +31,7 @@
     "hbs": "^4.0.1",
     "helmet": "^3.8.1",
     "http": "0.0.0",
-    "mongoose": "^4.10.1",
+    "mongoose": "^5.7.5",
     "paypal-rest-sdk": "^1.7.1",
     "sendgrid": "^4.10.0"
   }
